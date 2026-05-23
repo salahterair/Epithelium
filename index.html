@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Epithelium: Characteristics and Classification — Histology</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue: #1d4ed8;
+      --blue-dark: #1e40af;
+      --soft: #eef2ff;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --green: #16a34a;
+      --amber: #f59e0b;
+      --shadow: 0 4px 18px rgba(15,23,42,.07);
+      --highlight: #fef9c3;
+      --tab-h: 62px;
+    }
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: #334155;
+      --soft: #1e3a5f;
+    }
+
+    html { overflow-x: hidden; width: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.55;
+      transition: background .2s, color .2s;
+      overflow-x: hidden;
+      width: 100%;
+      padding-bottom: var(--tab-h);
+    }
+
+    /* ── Progress Bar ── */
+    .progress-wrap {
+      position: sticky; top: 0; z-index: 300;
+      height: 4px; background: var(--border);
+    }
+    .progress-bar {
+      height: 4px; width: 0%; background: var(--blue);
+      transition: width .3s;
+    }
+
+    /* ── Top Bar ── */
+    .top-bar {
+      position: sticky; top: 4px; z-index: 200;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 9px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .dark-btn {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      padding: 7px 16px;
+      border-radius: 40px;
+      font-size: 13px; font-weight: 700;
+      color: var(--text); cursor: pointer;
+      white-space: nowrap;
+      transition: background .2s, border-color .2s;
+    }
+    .dark-btn:active { opacity: .8; }
+
+    /* ── Bottom Tab Bar ── */
+    .tab-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+      height: var(--tab-h);
+      display: flex;
+    }
+    .tab-item {
+      flex: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 3px; cursor: pointer;
+      border: none; background: transparent;
+      color: var(--muted);
+      font-size: 9.5px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .3px;
+      padding: 6px 2px;
+      transition: color .2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .tab-item.active { color: var(--blue); }
+    .tab-icon { font-size: 21px; line-height: 1; }
+
+    /* ── Pages ── */
+    .page { display: none; padding: 14px 14px 28px; }
+    .page.active { display: block; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      color: #fff; border-radius: 22px;
+      padding: 26px 20px; margin-bottom: 18px;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.28);
+      padding: 5px 14px; border-radius: 999px;
+      font-size: 11px; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .hero h1 { font-size: 25px; font-weight: 900; margin-bottom: 7px; }
+    .hero p { font-size: 13px; opacity: .88; max-width: 86%; margin: 0 auto; }
+
+
+    /* ── Accordion ── */
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; margin: 9px 0;
+      overflow: hidden;
+    }
+    summary {
+      list-style: none; cursor: pointer;
+      padding: 14px 48px 14px 16px;
+      font-size: 14.5px; font-weight: 700;
+      position: relative; user-select: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+"; position: absolute;
+      right: 16px; top: 50%; transform: translateY(-50%);
+      font-size: 22px; color: var(--muted); font-weight: 400;
+    }
+    details[open] summary::after { content: "−"; }
+
+    .content {
+      border-top: 1px solid var(--border);
+      padding: 14px 16px;
+    }
+    ul, ol { padding-left: 20px; }
+    li { font-size: 13.5px; margin: 5px 0; }
+    p { font-size: 13.5px; margin-bottom: 8px; }
+    strong { font-weight: 700; }
+
+    /* ── Tables (contained, no page overflow) ── */
+    .table-wrap {
+      overflow-x: auto; margin: 10px 0;
+      border-radius: 10px; border: 1px solid var(--border);
+      -webkit-overflow-scrolling: touch;
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 280px; }
+    th, td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 13px; }
+    th { background: var(--blue); color: #fff; font-weight: 700; }
+    tr:last-child td { border-bottom: none; }
+
+    .callout { background: var(--soft); border-left: 4px solid var(--blue); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
+    .clinical { background: #f0fdf4; border-left: 4px solid var(--green); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
+    .pharmacy { background: #fffbeb; border-left: 4px solid var(--amber); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
+    body.dark .clinical { background: #1a2e1a; }
+    body.dark .pharmacy { background: #2d2a14; }
+
+
+    /* ── Flashcards ── */
+    .fc-counter-row {
+      display: flex; align-items: center;
+      justify-content: center; margin-bottom: 10px;
+    }
+    .fc-counter { font-size: 13px; color: var(--muted); font-weight: 700; }
+
+    .fc-prog { height: 4px; background: var(--border); border-radius: 4px; margin-bottom: 22px; }
+    .fc-prog-fill { height: 4px; background: var(--blue); border-radius: 4px; transition: width .3s; }
+
+    .fc-scene { width: 100%; perspective: 1000px; margin-bottom: 20px; }
+    .fc-card {
+      width: 100%; min-height: 230px;
+      position: relative; transform-style: preserve-3d;
+      transition: transform .5s; cursor: pointer;
+    }
+    .fc-card.flipped { transform: rotateY(180deg); }
+    .fc-face {
+      position: absolute; inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 22px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 28px 22px; text-align: center;
+      min-height: 230px;
+    }
+    .fc-front {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: white;
+    }
+    .fc-back {
+      background: var(--card); color: var(--text);
+      border: 2px solid var(--blue);
+      transform: rotateY(180deg);
+    }
+    .fc-face-label {
+      font-size: 10px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; opacity: .6; margin-bottom: 10px;
+    }
+    .fc-term { font-size: 23px; font-weight: 900; }
+    .fc-hint { font-size: 11px; opacity: .55; margin-top: 10px; }
+    .fc-def { font-size: 14px; line-height: 1.65; }
+
+    .fc-actions { display: flex; gap: 10px; }
+    .fc-btn {
+      flex: 1; padding: 15px; border-radius: 16px;
+      border: none; font-size: 14px; font-weight: 700;
+      cursor: pointer;
+    }
+    .fc-btn:active { opacity: .8; }
+    .fc-btn.prev { background: var(--border); color: var(--text); }
+    .fc-btn.next { background: var(--blue); color: white; }
+
+    /* ── Glossary ── */
+    .gloss-search {
+      width: 100%; padding: 10px 16px;
+      border-radius: 40px; border: 1.5px solid var(--border);
+      background: var(--bg); color: var(--text);
+      font-size: 14px; outline: none; margin-bottom: 14px;
+      transition: border-color .2s;
+    }
+    .gloss-search:focus { border-color: var(--blue); }
+    .gloss-alpha { font-size: 11px; font-weight: 800; color: var(--blue); padding: 12px 2px 4px; letter-spacing: 1px; }
+    .gloss-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 14px; padding: 13px 16px; margin-bottom: 8px;
+    }
+    .gloss-term { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
+    .gloss-def { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+    /* ── Quiz ── */
+    .quiz-prog { height: 5px; background: var(--border); border-radius: 5px; margin-bottom: 18px; }
+    .quiz-prog-fill { height: 5px; background: var(--blue); border-radius: 5px; transition: width .4s; }
+    .quiz-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .quiz-q-num { font-size: 12px; font-weight: 700; color: var(--muted); }
+    .quiz-score-badge { font-size: 12px; font-weight: 700; color: var(--green); background: #f0fdf4; padding: 4px 10px; border-radius: 999px; }
+    body.dark .quiz-score-badge { background: #1a2e1a; }
+    .quiz-question { font-size: 16px; font-weight: 700; line-height: 1.55; margin-bottom: 18px; }
+    .quiz-opts { display: flex; flex-direction: column; gap: 9px; margin-bottom: 18px; }
+    .quiz-opt {
+      background: var(--card); border: 2px solid var(--border);
+      border-radius: 14px; padding: 13px 15px;
+      font-size: 13.5px; font-weight: 500; cursor: pointer;
+      text-align: left; color: var(--text); width: 100%;
+      transition: border-color .2s, background .2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .quiz-opt:disabled { cursor: default; }
+    .quiz-opt.correct { border-color: var(--green); background: #f0fdf4; color: #15803d; font-weight: 700; }
+    .quiz-opt.wrong { border-color: #ef4444; background: #fef2f2; color: #dc2626; }
+    body.dark .quiz-opt.correct { background: #1a2e1a; color: #4ade80; }
+    body.dark .quiz-opt.wrong { background: #2e1a1a; color: #f87171; }
+
+    .quiz-exp {
+      background: var(--soft); border-left: 4px solid var(--blue);
+      border-radius: 12px; padding: 11px 14px;
+      font-size: 13px; margin-bottom: 14px;
+      display: none; line-height: 1.55;
+    }
+    .quiz-next {
+      width: 100%; background: var(--blue); color: white;
+      border: none; padding: 15px; border-radius: 16px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      display: none;
+    }
+    .quiz-next:active { opacity: .85; }
+
+    /* Score card */
+    .score-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 40px 24px;
+      text-align: center; display: none;
+    }
+    .score-emoji { font-size: 58px; margin-bottom: 12px; }
+    .score-num { font-size: 50px; font-weight: 900; color: var(--blue); line-height: 1; }
+    .score-sub { color: var(--muted); font-size: 14px; margin: 8px 0 24px; }
+    .quiz-restart {
+      background: var(--blue); color: white; border: none;
+      padding: 13px 32px; border-radius: 40px;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+    }
+
+    /* Page header */
+    .page-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .page-header h2 { font-size: 19px; font-weight: 800; }
+    .ph-icon { font-size: 22px; }
+
+    /* Back to top */
+    .backtop {
+      position: fixed; right: 14px;
+      bottom: calc(var(--tab-h) + 12px);
+      width: 40px; height: 40px;
+      background: var(--blue); color: white;
+      border: none; border-radius: 999px;
+      font-size: 17px; font-weight: 700;
+      cursor: pointer; display: flex;
+      align-items: center; justify-content: center;
+      box-shadow: 0 2px 12px rgba(29,78,216,.35);
+      opacity: 0; pointer-events: none;
+      transition: opacity .3s; z-index: 190;
+    }
+    .backtop.visible { opacity: 1; pointer-events: auto; }
+
+    .footer {
+      text-align: center; padding: 22px 14px 8px;
+      font-size: 12px; color: var(--blue); font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Progress bar -->
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<!-- Top Bar — dark mode only -->
+<div class="top-bar">
+  <button class="dark-btn" id="darkModeToggle">🌙 Dark</button>
+</div>
+
+<!-- ═══════════════════════════════════════
+     HOME (= LECTURE)
+════════════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="eyebrow">First-Year Medicine · General Histology</div>
+    <h1>Epithelium</h1>
+    <p>Characteristics, classification, surface specializations, glands &amp; clinical correlations</p>
+  </section>
+
+  <details id="sec1" open>
+    <summary>1. Learning Objectives</summary>
+    <div class="content">
+      <ul>
+        <li>Define epithelial tissue and describe its general organization.</li>
+        <li>Explain the main characteristics of epithelial cells: polarity, junctions, basement membrane attachment, avascularity, and regeneration.</li>
+        <li>Classify covering epithelia according to number of layers and shape of surface cells.</li>
+        <li>Recognize the main types of simple, stratified, pseudostratified, and transitional epithelium.</li>
+        <li>Relate epithelial structure to function in common organs.</li>
+        <li>Describe the basic classification of glandular epithelium.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details id="sec2">
+    <summary>2. What Is Epithelium?</summary>
+    <div class="content">
+      <p>Epithelium is a tissue composed of closely packed cells that cover external body surfaces, line internal cavities and tubes, and form the secretory parts of glands.</p>
+      <div class="callout"><strong>Core idea:</strong> Epithelium is the body’s surface and lining tissue. It forms selective barriers between the external environment, body cavities, and underlying connective tissue.</div>
+    </div>
+  </details>
+
+  <details id="sec3">
+    <summary>3. Main Locations of Epithelium</summary>
+    <div class="content">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Location</th><th>Example</th><th>Main Role</th></tr></thead>
+          <tbody>
+            <tr><td>External surface</td><td>Epidermis of skin</td><td>Protection from abrasion and dehydration</td></tr>
+            <tr><td>Internal cavities</td><td>Mouth, esophagus, stomach, intestine</td><td>Protection, secretion, absorption</td></tr>
+            <tr><td>Respiratory passages</td><td>Trachea and bronchi</td><td>Mucus secretion and mucociliary clearance</td></tr>
+            <tr><td>Blood and lymph vessels</td><td>Endothelium</td><td>Smooth lining for transport and exchange</td></tr>
+            <tr><td>Glands</td><td>Salivary, sweat, thyroid glands</td><td>Secretion</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec4">
+    <summary>4. General Characteristics of Epithelium</summary>
+    <div class="content">
+      <ul>
+        <li><strong>High cellularity:</strong> cells are very close together with little extracellular matrix.</li>
+        <li><strong>Polarity:</strong> each cell has apical, lateral, and basal domains.</li>
+        <li><strong>Specialized junctions:</strong> cells are attached to each other by junctional complexes.</li>
+        <li><strong>Basement membrane:</strong> basal surface is supported by a basement membrane.</li>
+        <li><strong>Avascularity:</strong> epithelium contains no blood vessels.</li>
+        <li><strong>Regeneration:</strong> epithelial cells commonly show active mitosis and renewal.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details id="sec5">
+    <summary>5. Cell Polarity</summary>
+    <div class="content">
+      <p>Epithelial cells are polarized, meaning different parts of the same cell have different structures and functions.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Domain</th><th>Faces</th><th>Common Features</th></tr></thead>
+          <tbody>
+            <tr><td>Apical</td><td>Lumen or external surface</td><td>Microvilli, cilia, stereocilia</td></tr>
+            <tr><td>Lateral</td><td>Neighboring cells</td><td>Tight junctions, adherens junctions, desmosomes, gap junctions</td></tr>
+            <tr><td>Basal</td><td>Connective tissue</td><td>Basement membrane attachment, hemidesmosomes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><strong>Practical point:</strong> Always identify the free apical surface first when looking at epithelium under the microscope.</div>
+    </div>
+  </details>
+
+  <details id="sec6">
+    <summary>6. Basement Membrane</summary>
+    <div class="content">
+      <p>The basement membrane is a thin extracellular layer between epithelium and connective tissue. It supports epithelial cells and helps control cell attachment, growth, repair, and filtration.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Component</th><th>Main Source</th><th>Key Molecules</th></tr></thead>
+          <tbody>
+            <tr><td>Basal lamina</td><td>Epithelial cells</td><td>Laminin and type IV collagen</td></tr>
+            <tr><td>Reticular lamina</td><td>Connective tissue</td><td>Reticular fibers, mainly type III collagen</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec7">
+    <summary>7. Avascularity and Nutrition</summary>
+    <div class="content">
+      <p>Epithelium is avascular. It receives oxygen and nutrients by diffusion from blood vessels in the underlying connective tissue.</p>
+      <div class="clinical"><strong>Clinical link:</strong> Epithelial injury heals efficiently when the basement membrane and underlying connective tissue remain intact, because surviving epithelial cells can migrate and divide.</div>
+    </div>
+  </details>
+
+  <details id="sec8">
+    <summary>8. Epithelial Junctions</summary>
+    <div class="content">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Junction</th><th>Main Function</th><th>Simple Explanation</th></tr></thead>
+          <tbody>
+            <tr><td>Tight junction</td><td>Seals spaces between cells</td><td>Prevents uncontrolled passage between cells</td></tr>
+            <tr><td>Adherens junction</td><td>Cell-to-cell adhesion</td><td>Links actin cytoskeletons of neighboring cells</td></tr>
+            <tr><td>Desmosome</td><td>Strong mechanical attachment</td><td>Important in epithelia exposed to friction</td></tr>
+            <tr><td>Gap junction</td><td>Communication</td><td>Allows ions and small molecules to pass between cells</td></tr>
+            <tr><td>Hemidesmosome</td><td>Attachment to basement membrane</td><td>Anchors basal cell surface</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec9">
+    <summary>9. Apical Surface Specializations</summary>
+    <div class="content">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Specialization</th><th>Structure</th><th>Function</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Microvilli</td><td>Short actin-based projections</td><td>Increase absorptive surface area</td><td>Small intestine, kidney tubules</td></tr>
+            <tr><td>Cilia</td><td>Motile microtubule-based projections</td><td>Move mucus or fluid</td><td>Respiratory tract, uterine tube</td></tr>
+            <tr><td>Stereocilia</td><td>Long non-motile microvilli</td><td>Absorption or sensory function</td><td>Epididymis, inner ear</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec10">
+    <summary>10. Functions of Epithelium</summary>
+    <div class="content">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Function</th><th>Typical Epithelium</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Protection</td><td>Stratified squamous</td><td>Skin, oral cavity, esophagus</td></tr>
+            <tr><td>Absorption</td><td>Simple columnar or cuboidal</td><td>Intestine, kidney tubules</td></tr>
+            <tr><td>Secretion</td><td>Glandular epithelium</td><td>Salivary glands, gastric glands</td></tr>
+            <tr><td>Diffusion</td><td>Simple squamous</td><td>Alveoli, capillaries</td></tr>
+            <tr><td>Transport</td><td>Ciliated epithelium</td><td>Trachea, uterine tube</td></tr>
+            <tr><td>Stretching</td><td>Transitional epithelium</td><td>Urinary bladder</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec11">
+    <summary>11. Basis of Classification</summary>
+    <div class="content">
+      <p>Covering epithelium is classified using two criteria:</p>
+      <ol>
+        <li><strong>Number of cell layers:</strong> simple, stratified, or pseudostratified.</li>
+        <li><strong>Shape of surface cells:</strong> squamous, cuboidal, or columnar.</li>
+      </ol>
+      <div class="callout"><strong>Rule:</strong> In stratified epithelium, classification is based on the shape of the surface cells, not the deepest cells.</div>
+    </div>
+  </details>
+
+  <details id="sec12">
+    <summary>12. Simple Epithelia</summary>
+    <div class="content">
+      <p>Simple epithelium has one layer of cells. Because every cell touches the basement membrane, simple epithelia are usually specialized for diffusion, filtration, absorption, and secretion rather than strong mechanical protection.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Type</th><th>Main Function</th><th>Common Location</th></tr></thead>
+          <tbody>
+            <tr><td>Simple squamous</td><td>Rapid diffusion and filtration</td><td>Alveoli, endothelium, mesothelium</td></tr>
+            <tr><td>Simple cuboidal</td><td>Secretion and absorption</td><td>Kidney tubules, thyroid follicles</td></tr>
+            <tr><td>Simple columnar</td><td>Absorption and secretion</td><td>Stomach, intestine, gallbladder</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec13">
+    <summary>13. Simple Squamous Epithelium</summary>
+    <div class="content">
+      <p>Simple squamous epithelium consists of a single layer of flat cells with flattened nuclei. It is very thin, making it ideal for diffusion, filtration, and smooth lining surfaces.</p>
+      <ul>
+        <li><strong>Alveoli:</strong> gas exchange.</li>
+        <li><strong>Endothelium:</strong> lining of blood and lymph vessels.</li>
+        <li><strong>Mesothelium:</strong> lining of pleural, pericardial, and peritoneal cavities.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details id="sec14">
+    <summary>14. Simple Cuboidal Epithelium</summary>
+    <div class="content">
+      <p>Simple cuboidal epithelium consists of one layer of cube-shaped cells with centrally placed round nuclei. It is commonly involved in secretion and absorption.</p>
+      <div class="clinical"><strong>Examples:</strong> Kidney tubules, thyroid follicles, small ducts of exocrine glands, and the surface of the ovary.</div>
+    </div>
+  </details>
+
+  <details id="sec15">
+    <summary>15. Simple Columnar Epithelium</summary>
+    <div class="content">
+      <p>Simple columnar epithelium consists of tall cells with oval nuclei usually located near the basal region. It is common in organs specialized for absorption and secretion.</p>
+      <ul>
+        <li><strong>Intestine:</strong> absorptive cells with microvilli and goblet cells.</li>
+        <li><strong>Stomach:</strong> mucus-secreting columnar cells.</li>
+        <li><strong>Gallbladder:</strong> absorptive columnar epithelium.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details id="sec16">
+    <summary>16. Pseudostratified Columnar Epithelium</summary>
+    <div class="content">
+      <p>Pseudostratified epithelium appears multilayered because nuclei are at different levels, but all cells contact the basement membrane. The classic example is respiratory epithelium.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Feature</th><th>Significance</th></tr></thead>
+          <tbody>
+            <tr><td>Cilia</td><td>Move mucus toward the pharynx</td></tr>
+            <tr><td>Goblet cells</td><td>Secrete mucus to trap dust and microbes</td></tr>
+            <tr><td>Basal cells</td><td>Stem cells for epithelial renewal</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec17">
+    <summary>17. Stratified Squamous Epithelium</summary>
+    <div class="content">
+      <p>Stratified squamous epithelium has many layers and flat surface cells. Its main function is protection against friction and mechanical injury.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Type</th><th>Surface Cells</th><th>Location</th><th>Main Protection</th></tr></thead>
+          <tbody>
+            <tr><td>Keratinized</td><td>Dead, keratin-filled cells</td><td>Epidermis</td><td>Abrasion and dehydration</td></tr>
+            <tr><td>Non-keratinized</td><td>Living moist cells</td><td>Oral cavity, esophagus, vagina</td><td>Abrasion in moist surfaces</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec18">
+    <summary>18. Transitional Epithelium</summary>
+    <div class="content">
+      <p>Transitional epithelium, also called urothelium, lines the urinary tract. It is specialized for distension and forms a barrier against the toxic effect of urine.</p>
+      <ul>
+        <li>Found in the renal calyces, renal pelvis, ureter, urinary bladder, and proximal urethra.</li>
+        <li>Surface umbrella cells appear dome-shaped when relaxed and flatter when stretched.</li>
+        <li>It prevents urine leakage into underlying tissue.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details id="sec19">
+    <summary>19. Glandular Epithelium</summary>
+    <div class="content">
+      <p>Glandular epithelium is specialized for secretion. Glands may be unicellular, such as goblet cells, or multicellular, such as salivary glands.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Type</th><th>Duct?</th><th>Secretion Destination</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Exocrine gland</td><td>Present</td><td>Surface or lumen</td><td>Sweat, salivary, sebaceous glands</td></tr>
+            <tr><td>Endocrine gland</td><td>Absent</td><td>Bloodstream</td><td>Thyroid, pituitary, adrenal glands</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout"><strong>Goblet cell:</strong> A unicellular exocrine gland that secretes mucus.</div>
+    </div>
+  </details>
+
+  <details id="sec20">
+    <summary>20. Exocrine Secretion Mechanisms</summary>
+    <div class="content">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Mode</th><th>Mechanism</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td>Merocrine</td><td>Secretion by exocytosis</td><td>Salivary glands, pancreatic acini</td></tr>
+            <tr><td>Apocrine</td><td>Apical part of cell is released with secretion</td><td>Mammary gland lipid secretion</td></tr>
+            <tr><td>Holocrine</td><td>Whole cell breaks down and becomes secretion</td><td>Sebaceous gland</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec21">
+    <summary>21. Clinical Correlations</summary>
+    <div class="content">
+      <div class="clinical"><strong>Metaplasia:</strong> Chronic irritation may cause replacement of one mature epithelial type by another. For example, smoking can replace ciliated respiratory epithelium with stratified squamous epithelium, reducing mucociliary clearance.</div>
+      <div class="clinical"><strong>Carcinoma:</strong> Malignant tumors arising from epithelium are called carcinomas. Squamous cell carcinoma and adenocarcinoma are common examples.</div>
+      <div class="clinical"><strong>Ciliary dysfunction:</strong> Defective ciliary movement impairs mucus clearance and may cause recurrent respiratory infection.</div>
+    </div>
+  </details>
+
+  <details id="sec22">
+    <summary>22. How to Identify Epithelium in Practical Histology</summary>
+    <div class="content">
+      <ol>
+        <li>Find the free surface or lumen.</li>
+        <li>Count the number of cell layers.</li>
+        <li>Identify the shape of the surface cells.</li>
+        <li>Look for apical specializations such as cilia or microvilli.</li>
+        <li>Relate the epithelial type to its function and location.</li>
+      </ol>
+      <div class="callout"><strong>Example:</strong> A single layer of tall cells with goblet cells and brush border in the intestine is simple columnar epithelium specialized for absorption and secretion.</div>
+    </div>
+  </details>
+
+  <details id="sec23">
+    <summary>23. Quick Classification Table</summary>
+    <div class="content">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Epithelial Type</th><th>Recognition Feature</th><th>Typical Site</th></tr></thead>
+          <tbody>
+            <tr><td>Simple squamous</td><td>One layer of flat cells</td><td>Alveoli, capillaries</td></tr>
+            <tr><td>Simple cuboidal</td><td>One layer of cube-shaped cells</td><td>Kidney tubules, thyroid follicles</td></tr>
+            <tr><td>Simple columnar</td><td>One layer of tall cells</td><td>Intestine, stomach</td></tr>
+            <tr><td>Pseudostratified columnar</td><td>Nuclei at different levels; all cells touch basement membrane</td><td>Trachea</td></tr>
+            <tr><td>Stratified squamous</td><td>Many layers; flat surface cells</td><td>Skin, oral cavity, esophagus</td></tr>
+            <tr><td>Transitional</td><td>Dome-shaped umbrella cells; stretchable</td><td>Urinary bladder, ureter</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </details>
+
+  <details id="sec24">
+    <summary>24. Student Review Questions</summary>
+    <div class="content">
+      <ol>
+        <li>Why is simple squamous epithelium suitable for diffusion?</li>
+        <li>Why is stratified squamous epithelium suitable for protection?</li>
+        <li>How can pseudostratified epithelium appear multilayered if all cells touch the basement membrane?</li>
+        <li>What is the difference between keratinized and non-keratinized stratified squamous epithelium?</li>
+        <li>Why is transitional epithelium important in the urinary bladder?</li>
+      </ol>
+    </div>
+  </details>
+
+  <details id="sec25">
+    <summary>25. Suggested References</summary>
+    <div class="content">
+      <ul>
+        <li>Junqueira’s Basic Histology: Text and Atlas.</li>
+        <li>Wheater’s Functional Histology.</li>
+        <li>Ross &amp; Pawlina: Histology: A Text and Atlas.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="footer">Designed by Dr. Salaheldin Terair · Ibn Sina University</div>
+</div></div>
+
+<!-- ═══════════════════════════════════════
+     FLASHCARDS
+════════════════════════════════════════ -->
+<div class="page" id="page-flashcards">
+  <div class="page-header">
+    <span class="ph-icon">🃏</span>
+    <h2>Flashcards</h2>
+  </div>
+
+  <div class="fc-counter-row">
+    <span class="fc-counter" id="fcCounter">Card 1 of 20</span>
+  </div>
+  <div class="fc-prog"><div class="fc-prog-fill" id="fcProgFill" style="width:5.00%"></div></div>
+
+  <div class="fc-scene">
+    <div class="fc-card" id="fcCard" onclick="flipCard()">
+      <div class="fc-face fc-front">
+        <div class="fc-face-label">Term</div>
+        <div class="fc-term" id="fcTerm">Epithelium</div>
+        <div class="fc-hint">Tap to reveal definition</div>
+      </div>
+      <div class="fc-face fc-back">
+        <div class="fc-face-label">Definition</div>
+        <div class="fc-def" id="fcDef">A tissue of closely packed cells that covers body surfaces, lines cavities and tubes, and forms glands.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fc-actions">
+    <button class="fc-btn prev" onclick="prevCard()">← Previous</button>
+    <button class="fc-btn next" onclick="nextCard()">Next →</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     GLOSSARY
+════════════════════════════════════════ -->
+<div class="page" id="page-glossary">
+  <div class="page-header">
+    <span class="ph-icon">📚</span>
+    <h2>Glossary</h2>
+  </div>
+  <input type="search" class="gloss-search" id="glossSearch" placeholder="Filter terms…" oninput="filterGlossary()" />
+  <div id="glossaryList"></div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     MCQ QUIZ
+════════════════════════════════════════ -->
+<div class="page" id="page-quiz">
+  <div class="page-header">
+    <span class="ph-icon">🧠</span>
+    <h2>MCQ Quiz</h2>
+  </div>
+
+  <div id="quizArea">
+    <div class="quiz-prog"><div class="quiz-prog-fill" id="quizProgFill" style="width:0%"></div></div>
+    <div class="quiz-meta">
+      <span class="quiz-q-num" id="quizQNum">Question 1 of 12</span>
+      <span class="quiz-score-badge" id="quizScoreBadge">Score: 0</span>
+    </div>
+    <div class="quiz-question" id="quizQuestion"></div>
+    <div class="quiz-opts" id="quizOpts"></div>
+    <div class="quiz-exp" id="quizExp"></div>
+    <button class="quiz-next" id="quizNext" onclick="nextQuestion()">Next Question →</button>
+  </div>
+
+  <div class="score-card" id="scoreCard">
+    <div class="score-emoji" id="scoreEmoji">🎉</div>
+    <div class="score-num" id="scoreNum">0/12</div>
+    <div class="score-sub" id="scoreSub">Great job!</div>
+    <button class="quiz-restart" onclick="restartQuiz()">🔄 Try Again</button>
+  </div>
+</div>
+
+<!-- ── Bottom Tab Bar (4 tabs) ── -->
+<nav class="tab-bar">
+  <button class="tab-item active" data-tab="home" onclick="switchTab('home')">
+    <span class="tab-icon">📖</span>Lecture
+  </button>
+  <button class="tab-item" data-tab="flashcards" onclick="switchTab('flashcards')">
+    <span class="tab-icon">🃏</span>Cards
+  </button>
+  <button class="tab-item" data-tab="glossary" onclick="switchTab('glossary')">
+    <span class="tab-icon">📚</span>Glossary
+  </button>
+  <button class="tab-item" data-tab="quiz" onclick="switchTab('quiz')">
+    <span class="tab-icon">🧠</span>Quiz
+  </button>
+</nav>
+
+<button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── Tab Switching ── */
+function switchTab(tab) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + tab).classList.add('active');
+  document.querySelector('[data-tab="' + tab + '"]').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── Dark Mode ── */
+const darkBtn = document.getElementById('darkModeToggle');
+darkBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  darkBtn.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
+});
+
+/* ── Back to Top ── */
+const backtop = document.getElementById('backtop');
+window.addEventListener('scroll', () => {
+  backtop.classList.toggle('visible', window.scrollY > 280);
+});
+
+/* ── Progress Bar (lecture sections) ── */
+const allDetails = document.querySelectorAll('#page-home details');
+const progressBar = document.getElementById('progressBar');
+function updateProgress() {
+  const opened = Array.from(allDetails).filter(d => d.open).length;
+  progressBar.style.width = (opened / allDetails.length * 100) + '%';
+}
+allDetails.forEach(d => d.addEventListener('toggle', updateProgress));
+updateProgress();
+
+
+/* ── Flashcard Data ── */
+const flashcards = [
+  {
+    "term": "Epithelium",
+    "def": "A tissue of closely packed cells that covers body surfaces, lines cavities and tubes, and forms glands."
+  },
+  {
+    "term": "Polarity",
+    "def": "The organization of epithelial cells into apical, lateral, and basal domains with different structures and functions."
+  },
+  {
+    "term": "Apical Surface",
+    "def": "The free surface of an epithelial cell facing the lumen or external environment."
+  },
+  {
+    "term": "Basal Surface",
+    "def": "The part of an epithelial cell attached to the basement membrane and facing connective tissue."
+  },
+  {
+    "term": "Basement Membrane",
+    "def": "A thin extracellular layer that supports epithelium and separates it from underlying connective tissue."
+  },
+  {
+    "term": "Basal Lamina",
+    "def": "The epithelial cell-produced part of the basement membrane, rich in laminin and type IV collagen."
+  },
+  {
+    "term": "Avascular",
+    "def": "Containing no blood vessels. Epithelium receives nutrients by diffusion from underlying connective tissue."
+  },
+  {
+    "term": "Simple Epithelium",
+    "def": "Epithelium formed of one layer of cells; usually specialized for diffusion, absorption, filtration, or secretion."
+  },
+  {
+    "term": "Stratified Epithelium",
+    "def": "Epithelium with two or more cell layers; mainly specialized for protection."
+  },
+  {
+    "term": "Pseudostratified Epithelium",
+    "def": "Epithelium that appears multilayered because nuclei lie at different levels, but all cells touch the basement membrane."
+  },
+  {
+    "term": "Simple Squamous Epithelium",
+    "def": "One layer of flat cells specialized for diffusion and filtration, such as alveoli and endothelium."
+  },
+  {
+    "term": "Simple Cuboidal Epithelium",
+    "def": "One layer of cube-shaped cells specialized for secretion and absorption, such as kidney tubules and thyroid follicles."
+  },
+  {
+    "term": "Simple Columnar Epithelium",
+    "def": "One layer of tall cells specialized for absorption and secretion, common in the gastrointestinal tract."
+  },
+  {
+    "term": "Stratified Squamous Epithelium",
+    "def": "Many layers with flat surface cells; protects against abrasion. It may be keratinized or non-keratinized."
+  },
+  {
+    "term": "Transitional Epithelium",
+    "def": "Stretchable epithelium of the urinary tract, with umbrella cells that change shape during distension."
+  },
+  {
+    "term": "Microvilli",
+    "def": "Short actin-based apical projections that increase absorptive surface area."
+  },
+  {
+    "term": "Cilia",
+    "def": "Motile microtubule-based apical projections that move mucus or fluid along epithelial surfaces."
+  },
+  {
+    "term": "Goblet Cell",
+    "def": "A unicellular exocrine gland that secretes mucus, common in intestinal and respiratory epithelium."
+  },
+  {
+    "term": "Endothelium",
+    "def": "Simple squamous epithelium lining blood and lymphatic vessels."
+  },
+  {
+    "term": "Mesothelium",
+    "def": "Simple squamous epithelium lining serous cavities such as pleura, pericardium, and peritoneum."
+  }
+];
+
+let fcIndex = 0;
+
+function updateFlashcard() {
+  const card = flashcards[fcIndex];
+  document.getElementById('fcTerm').textContent = card.term;
+  document.getElementById('fcDef').textContent = card.def;
+  document.getElementById('fcCounter').textContent = `Card ${fcIndex + 1} of ${flashcards.length}`;
+  document.getElementById('fcProgFill').style.width = ((fcIndex + 1) / flashcards.length * 100) + '%';
+  document.getElementById('fcCard').classList.remove('flipped');
+}
+function flipCard() { document.getElementById('fcCard').classList.toggle('flipped'); }
+function nextCard() { if (fcIndex < flashcards.length - 1) { fcIndex++; updateFlashcard(); } }
+function prevCard() { if (fcIndex > 0) { fcIndex--; updateFlashcard(); } }
+updateFlashcard();
+
+/* ── Glossary Data ── */
+const glossaryData = [
+  {
+    "term": "Adenocarcinoma",
+    "def": "A malignant epithelial tumor showing glandular differentiation or mucin production."
+  },
+  {
+    "term": "Apical Surface",
+    "def": "The free surface of epithelial cells facing the lumen or external environment."
+  },
+  {
+    "term": "Avascular",
+    "def": "Without blood vessels; epithelial nutrition depends on diffusion from connective tissue."
+  },
+  {
+    "term": "Basal Lamina",
+    "def": "A specialized extracellular matrix layer produced mainly by epithelial cells."
+  },
+  {
+    "term": "Basement Membrane",
+    "def": "Supportive extracellular layer between epithelium and connective tissue."
+  },
+  {
+    "term": "Carcinoma",
+    "def": "A malignant tumor arising from epithelial tissue."
+  },
+  {
+    "term": "Cilia",
+    "def": "Motile apical projections that move fluid or mucus across epithelial surfaces."
+  },
+  {
+    "term": "Desmosome",
+    "def": "A strong cell junction that resists mechanical stress."
+  },
+  {
+    "term": "Endocrine Gland",
+    "def": "A ductless gland that releases hormones into blood."
+  },
+  {
+    "term": "Endothelium",
+    "def": "Simple squamous epithelium lining blood and lymphatic vessels."
+  },
+  {
+    "term": "Epithelium",
+    "def": "Closely packed cells forming coverings, linings, and glands."
+  },
+  {
+    "term": "Exocrine Gland",
+    "def": "A gland that secretes through a duct onto a surface or into a lumen."
+  },
+  {
+    "term": "Gap Junction",
+    "def": "A communicating junction allowing ions and small molecules to pass between cells."
+  },
+  {
+    "term": "Goblet Cell",
+    "def": "A mucus-secreting unicellular exocrine gland."
+  },
+  {
+    "term": "Hemidesmosome",
+    "def": "A junction anchoring epithelial cells to the basement membrane."
+  },
+  {
+    "term": "Keratinized Epithelium",
+    "def": "Stratified squamous epithelium with dead keratin-filled surface cells, as in epidermis."
+  },
+  {
+    "term": "Mesothelium",
+    "def": "Simple squamous epithelium lining serous cavities."
+  },
+  {
+    "term": "Metaplasia",
+    "def": "Reversible replacement of one mature epithelial type by another."
+  },
+  {
+    "term": "Microvilli",
+    "def": "Apical projections that increase surface area for absorption."
+  },
+  {
+    "term": "Non-keratinized Epithelium",
+    "def": "Moist stratified squamous epithelium with living surface cells."
+  },
+  {
+    "term": "Pseudostratified Epithelium",
+    "def": "Epithelium appearing multilayered although all cells contact the basement membrane."
+  },
+  {
+    "term": "Simple Epithelium",
+    "def": "Epithelium consisting of one cell layer."
+  },
+  {
+    "term": "Stereocilia",
+    "def": "Long non-motile microvilli involved in absorption or sensory function."
+  },
+  {
+    "term": "Stratified Epithelium",
+    "def": "Epithelium consisting of two or more cell layers."
+  },
+  {
+    "term": "Tight Junction",
+    "def": "An apical junction that seals the space between adjacent epithelial cells."
+  },
+  {
+    "term": "Transitional Epithelium",
+    "def": "Stretchable urothelium lining the urinary tract."
+  }
+];
+
+function renderGlossary(filter = '') {
+  const container = document.getElementById('glossaryList');
+  const filtered = glossaryData.filter(g =>
+    !filter || g.term.toLowerCase().includes(filter) || g.def.toLowerCase().includes(filter)
+  );
+  let currentLetter = ''; let html = '';
+  filtered.forEach(g => {
+    const letter = g.term[0].toUpperCase();
+    if (letter !== currentLetter) { currentLetter = letter; html += `<div class="gloss-alpha">${letter}</div>`; }
+    html += `<div class="gloss-item"><div class="gloss-term">${g.term}</div><div class="gloss-def">${g.def}</div></div>`;
+  });
+  container.innerHTML = html || '<p style="color:var(--muted);text-align:center;padding:24px">No terms found.</p>';
+}
+function filterGlossary() {
+  renderGlossary(document.getElementById('glossSearch').value.trim().toLowerCase());
+}
+renderGlossary();
+
+/* ── MCQ Quiz Data ── */
+const quizData = [
+  {
+    "q": "A student examines a tissue section and sees one layer of very flat cells lining air spaces in the lung. Which epithelial type is most likely present?",
+    "opts": [
+      "Simple squamous epithelium",
+      "Simple cuboidal epithelium",
+      "Stratified squamous epithelium",
+      "Transitional epithelium"
+    ],
+    "correct": 0,
+    "exp": "Alveoli require a very thin lining for gas diffusion, so they are lined by simple squamous epithelium."
+  },
+  {
+    "q": "Which feature best distinguishes epithelial tissue from most connective tissue?",
+    "opts": [
+      "Abundant extracellular matrix",
+      "Closely packed cells with minimal extracellular matrix",
+      "Large blood vessels between cells",
+      "Randomly arranged collagen bundles"
+    ],
+    "correct": 1,
+    "exp": "Epithelium has high cellularity and minimal extracellular matrix, whereas connective tissue usually has more extracellular matrix."
+  },
+  {
+    "q": "A histology slide shows an epithelial lining with all cells touching the basement membrane, but nuclei appear at different heights. Which term best describes this epithelium?",
+    "opts": [
+      "Simple cuboidal",
+      "Pseudostratified columnar",
+      "Stratified columnar",
+      "Transitional"
+    ],
+    "correct": 1,
+    "exp": "Pseudostratified epithelium looks multilayered because nuclei are at different levels, but all cells contact the basement membrane."
+  },
+  {
+    "q": "Which epithelial specialization mainly increases the absorptive surface area of intestinal epithelial cells?",
+    "opts": [
+      "Cilia",
+      "Microvilli",
+      "Desmosomes",
+      "Hemidesmosomes"
+    ],
+    "correct": 1,
+    "exp": "Microvilli increase apical surface area and form the brush border in absorptive epithelia such as the small intestine."
+  },
+  {
+    "q": "Which epithelial type is most suitable for protection against abrasion in the esophagus?",
+    "opts": [
+      "Simple squamous epithelium",
+      "Simple columnar epithelium",
+      "Non-keratinized stratified squamous epithelium",
+      "Transitional epithelium"
+    ],
+    "correct": 2,
+    "exp": "The esophagus is exposed to friction from swallowed food and is lined by non-keratinized stratified squamous epithelium."
+  },
+  {
+    "q": "Which structure anchors epithelial cells to the underlying basement membrane?",
+    "opts": [
+      "Gap junction",
+      "Hemidesmosome",
+      "Cilium",
+      "Goblet cell"
+    ],
+    "correct": 1,
+    "exp": "Hemidesmosomes attach the basal surface of epithelial cells to the basement membrane."
+  },
+  {
+    "q": "A section from the urinary bladder shows dome-shaped surface cells that flatten when the organ is distended. Which epithelium is present?",
+    "opts": [
+      "Simple cuboidal epithelium",
+      "Ciliated simple columnar epithelium",
+      "Transitional epithelium",
+      "Keratinized stratified squamous epithelium"
+    ],
+    "correct": 2,
+    "exp": "Transitional epithelium, or urothelium, is specialized for stretching in the urinary tract."
+  },
+  {
+    "q": "Which statement best describes endocrine glands?",
+    "opts": [
+      "They secrete products through ducts onto epithelial surfaces",
+      "They release hormones into the bloodstream and lack ducts",
+      "They are always unicellular glands",
+      "They only secrete mucus"
+    ],
+    "correct": 1,
+    "exp": "Endocrine glands are ductless and release hormones into blood."
+  },
+  {
+    "q": "Which epithelial junction forms a seal that limits passage of material between adjacent epithelial cells?",
+    "opts": [
+      "Tight junction",
+      "Gap junction",
+      "Desmosome",
+      "Hemidesmosome"
+    ],
+    "correct": 0,
+    "exp": "Tight junctions form an apical seal and regulate paracellular movement."
+  },
+  {
+    "q": "A chronic smoker develops replacement of ciliated respiratory epithelium by stratified squamous epithelium. Which process explains this change?",
+    "opts": [
+      "Hypertrophy",
+      "Metaplasia",
+      "Necrosis",
+      "Calcification"
+    ],
+    "correct": 1,
+    "exp": "Metaplasia is reversible replacement of one mature epithelial type by another in response to chronic irritation."
+  },
+  {
+    "q": "Which epithelial type is commonly found in thyroid follicles?",
+    "opts": [
+      "Simple cuboidal epithelium",
+      "Simple squamous epithelium",
+      "Keratinized stratified squamous epithelium",
+      "Pseudostratified epithelium"
+    ],
+    "correct": 0,
+    "exp": "Thyroid follicles are typically lined by simple cuboidal epithelium involved in secretion and absorption."
+  },
+  {
+    "q": "Which rule is correct when classifying stratified epithelium?",
+    "opts": [
+      "Use the shape of the deepest cells",
+      "Use the shape of the surface cells",
+      "Use the thickness of the basement membrane",
+      "Use the number of blood vessels"
+    ],
+    "correct": 1,
+    "exp": "Stratified epithelium is named according to the shape of the cells at the free surface."
+  }
+];
+
+let qIndex = 0, score = 0, answered = false;
+
+function renderQuestion() {
+  const q = quizData[qIndex];
+  document.getElementById('quizQNum').textContent = `Question ${qIndex + 1} of ${quizData.length}`;
+  document.getElementById('quizProgFill').style.width = (qIndex / quizData.length * 100) + '%';
+  document.getElementById('quizQuestion').textContent = q.q;
+  document.getElementById('quizExp').style.display = 'none';
+  document.getElementById('quizNext').style.display = 'none';
+  answered = false;
+  document.getElementById('quizOpts').innerHTML = q.opts.map((o, i) =>
+    `<button class="quiz-opt" onclick="selectAnswer(${i})">${String.fromCharCode(65+i)}. ${o}</button>`
+  ).join('');
+}
+
+function selectAnswer(i) {
+  if (answered) return;
+  answered = true;
+  const q = quizData[qIndex];
+  document.querySelectorAll('.quiz-opt').forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === q.correct) b.classList.add('correct');
+    else if (idx === i && i !== q.correct) b.classList.add('wrong');
+  });
+  if (i === q.correct) score++;
+  document.getElementById('quizScoreBadge').textContent = `Score: ${score}`;
+  const expEl = document.getElementById('quizExp');
+  expEl.textContent = '💡 ' + q.exp;
+  expEl.style.display = 'block';
+  const nextBtn = document.getElementById('quizNext');
+  nextBtn.style.display = 'block';
+  nextBtn.textContent = qIndex < quizData.length - 1 ? 'Next Question →' : 'See Results 🎯';
+}
+
+function nextQuestion() {
+  qIndex++;
+  if (qIndex >= quizData.length) showScore();
+  else renderQuestion();
+}
+
+function showScore() {
+  document.getElementById('quizArea').style.display = 'none';
+  document.getElementById('scoreCard').style.display = 'block';
+  const pct = score / quizData.length;
+  document.getElementById('scoreNum').textContent = `${score}/${quizData.length}`;
+  document.getElementById('scoreEmoji').textContent = pct === 1 ? '🏆' : pct >= .7 ? '🎉' : pct >= .5 ? '📚' : '💪';
+  document.getElementById('scoreSub').textContent = pct === 1 ? 'Perfect score! Outstanding!' : pct >= .7 ? 'Great job! Keep it up!' : pct >= .5 ? 'Good effort — review the lecture notes.' : 'Keep studying — you\'ve got this!';
+}
+
+function restartQuiz() {
+  qIndex = 0; score = 0; answered = false;
+  document.getElementById('quizScoreBadge').textContent = 'Score: 0';
+  document.getElementById('scoreCard').style.display = 'none';
+  document.getElementById('quizArea').style.display = 'block';
+  renderQuestion();
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
