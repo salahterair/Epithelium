@@ -242,6 +242,80 @@
     .gloss-term { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
     .gloss-def { font-size: 13px; color: var(--muted); line-height: 1.5; }
 
+
+
+    /* ── Reading Material ── */
+    .reading-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+    .reading-card h3 {
+      font-size: 16px;
+      color: var(--blue);
+      margin-bottom: 8px;
+      font-weight: 850;
+    }
+    .reading-card p {
+      font-size: 13.8px;
+      line-height: 1.72;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .reading-card mark {
+      background: var(--highlight);
+      color: var(--text);
+      padding: 1px 4px;
+      border-radius: 5px;
+    }
+    .reading-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    .reading-chip {
+      background: var(--soft);
+      color: var(--blue);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11.5px;
+      font-weight: 800;
+    }
+    .reading-keybox {
+      background: var(--soft);
+      border-left: 4px solid var(--blue);
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin: 10px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .reading-clinical {
+      background: #f0fdf4;
+      border-left: 4px solid var(--green);
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin: 10px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .reading-warning {
+      background: #fffbeb;
+      border-left: 4px solid var(--amber);
+      border-radius: 12px;
+      padding: 11px 13px;
+      margin: 10px 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    body.dark .reading-clinical { background: #1a2e1a; }
+    body.dark .reading-warning { background: #2d2a14; }
+
     /* ── Quiz ── */
     .quiz-prog { height: 5px; background: var(--border); border-radius: 5px; margin-bottom: 18px; }
     .quiz-prog-fill { height: 5px; background: var(--blue); border-radius: 5px; transition: width .4s; }
@@ -705,7 +779,7 @@
 <div class="page" id="page-flashcards">
   <div class="page-header">
     <span class="ph-icon">🃏</span>
-    <h2>Flashcards</h2>
+    <h2>Clinical Review Cards</h2>
   </div>
 
   <div class="fc-counter-row">
@@ -716,12 +790,12 @@
   <div class="fc-scene">
     <div class="fc-card" id="fcCard" onclick="flipCard()">
       <div class="fc-face fc-front">
-        <div class="fc-face-label">Term</div>
+        <div class="fc-face-label">Review Focus</div>
         <div class="fc-term" id="fcTerm">Epithelium</div>
-        <div class="fc-hint">Tap to reveal definition</div>
+        <div class="fc-hint">Tap to reveal clinical/application point</div>
       </div>
       <div class="fc-face fc-back">
-        <div class="fc-face-label">Definition</div>
+        <div class="fc-face-label">Clinical Correlation</div>
         <div class="fc-def" id="fcDef">A tissue of closely packed cells that covers body surfaces, lines cavities and tubes, and forms glands.</div>
       </div>
     </div>
@@ -734,15 +808,74 @@
 </div>
 
 <!-- ═══════════════════════════════════════
-     GLOSSARY
+     READING MATERIAL
 ════════════════════════════════════════ -->
-<div class="page" id="page-glossary">
+<div class="page" id="page-reading">
   <div class="page-header">
     <span class="ph-icon">📚</span>
-    <h2>Glossary</h2>
+    <h2>Reading Material</h2>
   </div>
-  <input type="search" class="gloss-search" id="glossSearch" placeholder="Filter terms…" oninput="filterGlossary()" />
-  <div id="glossaryList"></div>
+
+  <div class="reading-meta">
+    <span class="reading-chip">Estimated reading time: 8–10 minutes</span>
+    <span class="reading-chip">First-Year Medicine</span>
+    <span class="reading-chip">General Histology</span>
+  </div>
+
+  <article class="reading-card">
+    <h3>1. Overview of Epithelial Tissue</h3>
+    <p><strong>Epithelium</strong> is one of the basic tissues of the body. It forms the cellular covering of external surfaces, lines internal cavities and tubes, and forms the secretory component of glands. Because epithelial cells are closely packed, this tissue is well suited to form <mark>selective barriers</mark> between the external environment, body spaces, and underlying connective tissue.</p>
+    <p>The functions of epithelium depend on its structure. Thin epithelium favors diffusion and filtration, while multilayered epithelium provides protection. Columnar and cuboidal cells are commonly involved in secretion and absorption, especially when their apical surface is modified by microvilli or cilia.</p>
+    <div class="reading-keybox"><strong>Key concept:</strong> Always connect epithelial structure with function. A thin lining usually supports exchange; a thick multilayered lining usually supports protection.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>2. Main Characteristics of Epithelium</h3>
+    <p>Epithelial tissue is characterized by <strong>high cellularity</strong>, meaning that cells are closely arranged with very little extracellular matrix. The cells show <strong>polarity</strong>, with distinct apical, lateral, and basal domains. The <mark>apical surface</mark> faces a lumen or external surface, while the <mark>basal surface</mark> rests on the basement membrane.</p>
+    <p>Epithelium is usually <strong>avascular</strong>, so it receives oxygen and nutrients by diffusion from blood vessels in the underlying connective tissue. Many epithelia also have a high capacity for <strong>regeneration</strong>, which is important because epithelial surfaces are frequently exposed to mechanical stress, chemical irritation, and microbial contact.</p>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Superficial epithelial injury may heal efficiently if the basement membrane and underlying connective tissue remain intact, because surviving epithelial cells can migrate and divide.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>3. Basement Membrane and Cell Junctions</h3>
+    <p>The <strong>basement membrane</strong> is a thin extracellular layer that supports epithelium and separates it from connective tissue. It includes the <mark>basal lamina</mark>, produced mainly by epithelial cells, and the <mark>reticular lamina</mark>, contributed by connective tissue. Important molecules include laminin, type IV collagen, and type III collagen.</p>
+    <p>Epithelial cells are joined by specialized junctions. <strong>Tight junctions</strong> seal the space between cells, <strong>desmosomes</strong> resist mechanical stress, <strong>gap junctions</strong> allow communication, and <strong>hemidesmosomes</strong> anchor epithelial cells to the basement membrane.</p>
+    <div class="reading-warning"><strong>Common exam confusion:</strong> Desmosomes attach cells to neighboring cells, while hemidesmosomes attach epithelial cells to the basement membrane.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>4. Classification of Covering Epithelium</h3>
+    <p>Covering epithelium is classified using two criteria: the <strong>number of layers</strong> and the <strong>shape of the surface cells</strong>. Simple epithelium has one layer of cells. Stratified epithelium has two or more layers. Pseudostratified epithelium appears multilayered, but all cells touch the basement membrane.</p>
+    <p>The surface cell shape may be <mark>squamous</mark>, <mark>cuboidal</mark>, or <mark>columnar</mark>. In stratified epithelium, classification is based on the surface cells, not the basal cells. Therefore, many layers with flat surface cells are called <strong>stratified squamous epithelium</strong>.</p>
+    <div class="reading-keybox"><strong>Histology identification tip:</strong> Find the free surface first, count the layers, then identify the shape of the surface cells.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>5. Simple Epithelia</h3>
+    <p><strong>Simple squamous epithelium</strong> is very thin and is ideal for diffusion and filtration. It is found in alveoli, blood vessels as endothelium, and serous cavities as mesothelium. <strong>Simple cuboidal epithelium</strong> is commonly involved in secretion and absorption, such as in kidney tubules and thyroid follicles.</p>
+    <p><strong>Simple columnar epithelium</strong> consists of tall cells and is common in the gastrointestinal tract. In the intestine, it supports absorption and secretion, often with microvilli and goblet cells. In the stomach, columnar epithelial cells are specialized mainly for mucus secretion and mucosal protection.</p>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Damage to intestinal epithelium may impair absorption because the absorptive surface and brush border are essential for nutrient uptake.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>6. Pseudostratified, Stratified, and Transitional Epithelium</h3>
+    <p><strong>Pseudostratified columnar epithelium</strong> is classically found in the respiratory tract. Its nuclei appear at different levels, giving a false impression of multiple layers. Respiratory epithelium commonly contains cilia, goblet cells, and basal cells. Cilia move mucus, goblet cells secrete mucus, and basal cells contribute to renewal.</p>
+    <p><strong>Stratified squamous epithelium</strong> is adapted for protection against abrasion. It may be keratinized, as in the epidermis, or non-keratinized, as in the oral cavity and esophagus. <strong>Transitional epithelium</strong>, or urothelium, lines much of the urinary tract and allows stretching while maintaining a barrier against urine.</p>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Chronic smoking may cause metaplasia of respiratory epithelium, replacing ciliated pseudostratified epithelium with stratified squamous epithelium and reducing mucociliary clearance.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>7. Glandular Epithelium</h3>
+    <p><strong>Glandular epithelium</strong> is specialized for secretion. Exocrine glands secrete through ducts onto a surface or into a lumen, while endocrine glands are ductless and release hormones into the bloodstream. Goblet cells are unicellular exocrine glands that secrete mucus.</p>
+    <p>Exocrine glands may release products by different mechanisms. <strong>Merocrine secretion</strong> occurs by exocytosis, <strong>apocrine secretion</strong> releases part of the apical cytoplasm with the product, and <strong>holocrine secretion</strong> occurs when the entire cell breaks down to become part of the secretion.</p>
+    <div class="reading-keybox"><strong>Key concept:</strong> Exocrine glands have ducts; endocrine glands do not have ducts and release hormones into blood.</div>
+  </article>
+
+  <article class="reading-card">
+    <h3>8. Summary for Practical Histology</h3>
+    <p>When examining epithelial tissue under the microscope, first identify the <strong>free surface</strong> or lumen. Then determine whether the epithelium is simple, stratified, pseudostratified, or transitional. Next, identify the shape of the surface cells and look for specializations such as cilia, microvilli, goblet cells, keratin, or umbrella cells.</p>
+    <div class="reading-warning"><strong>Common exam focus:</strong> Students are often tested on matching epithelial type with location and function, such as simple squamous epithelium in alveoli, stratified squamous epithelium in the esophagus, and transitional epithelium in the urinary bladder.</div>
+  </article>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -782,8 +915,8 @@
   <button class="tab-item" data-tab="flashcards" onclick="switchTab('flashcards')">
     <span class="tab-icon">🃏</span>Cards
   </button>
-  <button class="tab-item" data-tab="glossary" onclick="switchTab('glossary')">
-    <span class="tab-icon">📚</span>Glossary
+  <button class="tab-item" data-tab="reading" onclick="switchTab('reading')">
+    <span class="tab-icon">📚</span>Reading
   </button>
   <button class="tab-item" data-tab="quiz" onclick="switchTab('quiz')">
     <span class="tab-icon">🧠</span>Quiz
@@ -829,86 +962,86 @@ updateProgress();
 /* ── Flashcard Data ── */
 const flashcards = [
   {
-    "term": "Epithelium",
-    "def": "A tissue of closely packed cells that covers body surfaces, lines cavities and tubes, and forms glands."
+    "term": "Simple squamous epithelium",
+    "def": "Clinical style review: very thin lining for rapid diffusion; classically found in alveoli, endothelium, and mesothelium."
   },
   {
-    "term": "Polarity",
-    "def": "The organization of epithelial cells into apical, lateral, and basal domains with different structures and functions."
+    "term": "Simple cuboidal epithelium",
+    "def": "Clinical style review: usually linked to secretion and absorption; common in kidney tubules and thyroid follicles."
   },
   {
-    "term": "Apical Surface",
-    "def": "The free surface of an epithelial cell facing the lumen or external environment."
+    "term": "Simple columnar epithelium",
+    "def": "Clinical style review: tall absorptive or secretory cells; important in stomach, intestine, and gallbladder."
   },
   {
-    "term": "Basal Surface",
-    "def": "The part of an epithelial cell attached to the basement membrane and facing connective tissue."
+    "term": "Pseudostratified respiratory epithelium",
+    "def": "Clinical style review: nuclei appear at different levels, but all cells touch the basement membrane; cilia and goblet cells support mucociliary clearance."
   },
   {
-    "term": "Basement Membrane",
-    "def": "A thin extracellular layer that supports epithelium and separates it from underlying connective tissue."
+    "term": "Stratified squamous epithelium",
+    "def": "Clinical style review: protective epithelium against abrasion; keratinized in skin and non-keratinized in oral cavity and esophagus."
   },
   {
-    "term": "Basal Lamina",
-    "def": "The epithelial cell-produced part of the basement membrane, rich in laminin and type IV collagen."
-  },
-  {
-    "term": "Avascular",
-    "def": "Containing no blood vessels. Epithelium receives nutrients by diffusion from underlying connective tissue."
-  },
-  {
-    "term": "Simple Epithelium",
-    "def": "Epithelium formed of one layer of cells; usually specialized for diffusion, absorption, filtration, or secretion."
-  },
-  {
-    "term": "Stratified Epithelium",
-    "def": "Epithelium with two or more cell layers; mainly specialized for protection."
-  },
-  {
-    "term": "Pseudostratified Epithelium",
-    "def": "Epithelium that appears multilayered because nuclei lie at different levels, but all cells touch the basement membrane."
-  },
-  {
-    "term": "Simple Squamous Epithelium",
-    "def": "One layer of flat cells specialized for diffusion and filtration, such as alveoli and endothelium."
-  },
-  {
-    "term": "Simple Cuboidal Epithelium",
-    "def": "One layer of cube-shaped cells specialized for secretion and absorption, such as kidney tubules and thyroid follicles."
-  },
-  {
-    "term": "Simple Columnar Epithelium",
-    "def": "One layer of tall cells specialized for absorption and secretion, common in the gastrointestinal tract."
-  },
-  {
-    "term": "Stratified Squamous Epithelium",
-    "def": "Many layers with flat surface cells; protects against abrasion. It may be keratinized or non-keratinized."
-  },
-  {
-    "term": "Transitional Epithelium",
-    "def": "Stretchable epithelium of the urinary tract, with umbrella cells that change shape during distension."
+    "term": "Transitional epithelium",
+    "def": "Clinical style review: urothelium with umbrella cells; allows urinary bladder distension while maintaining a urine barrier."
   },
   {
     "term": "Microvilli",
-    "def": "Short actin-based apical projections that increase absorptive surface area."
+    "def": "Clinical style review: increase absorptive surface area; form brush border in absorptive epithelium such as intestine and kidney tubules."
   },
   {
     "term": "Cilia",
-    "def": "Motile microtubule-based apical projections that move mucus or fluid along epithelial surfaces."
+    "def": "Clinical style review: move mucus or fluid; defective ciliary activity may cause impaired mucociliary clearance and recurrent respiratory infection."
   },
   {
-    "term": "Goblet Cell",
-    "def": "A unicellular exocrine gland that secretes mucus, common in intestinal and respiratory epithelium."
+    "term": "Goblet cells",
+    "def": "Clinical style review: unicellular mucus-secreting exocrine glands; common in respiratory and intestinal epithelium."
+  },
+  {
+    "term": "Basement membrane",
+    "def": "Clinical style review: supports epithelium and guides repair; epithelial healing is better when this layer remains intact."
+  },
+  {
+    "term": "Tight junctions",
+    "def": "Clinical style review: seal spaces between epithelial cells and regulate paracellular passage across epithelial barriers."
+  },
+  {
+    "term": "Desmosomes",
+    "def": "Clinical style review: strong cell-to-cell attachment; especially important in epithelia exposed to friction and mechanical stress."
+  },
+  {
+    "term": "Hemidesmosomes",
+    "def": "Clinical style review: anchor epithelial cells to the basement membrane; remember hemi = cell to basement membrane, not cell to cell."
+  },
+  {
+    "term": "Metaplasia",
+    "def": "Clinical style review: reversible replacement of one mature epithelial type by another, commonly due to chronic irritation such as smoking."
+  },
+  {
+    "term": "Carcinoma",
+    "def": "Clinical style review: malignant tumor arising from epithelial tissue; examples include squamous cell carcinoma and adenocarcinoma."
   },
   {
     "term": "Endothelium",
-    "def": "Simple squamous epithelium lining blood and lymphatic vessels."
+    "def": "Clinical style review: simple squamous lining of blood and lymph vessels; provides a smooth surface for transport and exchange."
   },
   {
     "term": "Mesothelium",
-    "def": "Simple squamous epithelium lining serous cavities such as pleura, pericardium, and peritoneum."
+    "def": "Clinical style review: simple squamous lining of serous cavities such as pleura, pericardium, and peritoneum."
+  },
+  {
+    "term": "Exocrine gland",
+    "def": "Clinical style review: secretes through a duct onto an epithelial surface or into a lumen; examples include salivary and sweat glands."
+  },
+  {
+    "term": "Endocrine gland",
+    "def": "Clinical style review: ductless gland releasing hormones into blood; examples include thyroid, pituitary, and adrenal glands."
+  },
+  {
+    "term": "Classification rule",
+    "def": "Clinical style review: in stratified epithelium, always classify according to the shape of the surface cells."
   }
-];
+]
 
 let fcIndex = 0;
 
@@ -925,131 +1058,7 @@ function nextCard() { if (fcIndex < flashcards.length - 1) { fcIndex++; updateFl
 function prevCard() { if (fcIndex > 0) { fcIndex--; updateFlashcard(); } }
 updateFlashcard();
 
-/* ── Glossary Data ── */
-const glossaryData = [
-  {
-    "term": "Adenocarcinoma",
-    "def": "A malignant epithelial tumor showing glandular differentiation or mucin production."
-  },
-  {
-    "term": "Apical Surface",
-    "def": "The free surface of epithelial cells facing the lumen or external environment."
-  },
-  {
-    "term": "Avascular",
-    "def": "Without blood vessels; epithelial nutrition depends on diffusion from connective tissue."
-  },
-  {
-    "term": "Basal Lamina",
-    "def": "A specialized extracellular matrix layer produced mainly by epithelial cells."
-  },
-  {
-    "term": "Basement Membrane",
-    "def": "Supportive extracellular layer between epithelium and connective tissue."
-  },
-  {
-    "term": "Carcinoma",
-    "def": "A malignant tumor arising from epithelial tissue."
-  },
-  {
-    "term": "Cilia",
-    "def": "Motile apical projections that move fluid or mucus across epithelial surfaces."
-  },
-  {
-    "term": "Desmosome",
-    "def": "A strong cell junction that resists mechanical stress."
-  },
-  {
-    "term": "Endocrine Gland",
-    "def": "A ductless gland that releases hormones into blood."
-  },
-  {
-    "term": "Endothelium",
-    "def": "Simple squamous epithelium lining blood and lymphatic vessels."
-  },
-  {
-    "term": "Epithelium",
-    "def": "Closely packed cells forming coverings, linings, and glands."
-  },
-  {
-    "term": "Exocrine Gland",
-    "def": "A gland that secretes through a duct onto a surface or into a lumen."
-  },
-  {
-    "term": "Gap Junction",
-    "def": "A communicating junction allowing ions and small molecules to pass between cells."
-  },
-  {
-    "term": "Goblet Cell",
-    "def": "A mucus-secreting unicellular exocrine gland."
-  },
-  {
-    "term": "Hemidesmosome",
-    "def": "A junction anchoring epithelial cells to the basement membrane."
-  },
-  {
-    "term": "Keratinized Epithelium",
-    "def": "Stratified squamous epithelium with dead keratin-filled surface cells, as in epidermis."
-  },
-  {
-    "term": "Mesothelium",
-    "def": "Simple squamous epithelium lining serous cavities."
-  },
-  {
-    "term": "Metaplasia",
-    "def": "Reversible replacement of one mature epithelial type by another."
-  },
-  {
-    "term": "Microvilli",
-    "def": "Apical projections that increase surface area for absorption."
-  },
-  {
-    "term": "Non-keratinized Epithelium",
-    "def": "Moist stratified squamous epithelium with living surface cells."
-  },
-  {
-    "term": "Pseudostratified Epithelium",
-    "def": "Epithelium appearing multilayered although all cells contact the basement membrane."
-  },
-  {
-    "term": "Simple Epithelium",
-    "def": "Epithelium consisting of one cell layer."
-  },
-  {
-    "term": "Stereocilia",
-    "def": "Long non-motile microvilli involved in absorption or sensory function."
-  },
-  {
-    "term": "Stratified Epithelium",
-    "def": "Epithelium consisting of two or more cell layers."
-  },
-  {
-    "term": "Tight Junction",
-    "def": "An apical junction that seals the space between adjacent epithelial cells."
-  },
-  {
-    "term": "Transitional Epithelium",
-    "def": "Stretchable urothelium lining the urinary tract."
-  }
-];
-
-function renderGlossary(filter = '') {
-  const container = document.getElementById('glossaryList');
-  const filtered = glossaryData.filter(g =>
-    !filter || g.term.toLowerCase().includes(filter) || g.def.toLowerCase().includes(filter)
-  );
-  let currentLetter = ''; let html = '';
-  filtered.forEach(g => {
-    const letter = g.term[0].toUpperCase();
-    if (letter !== currentLetter) { currentLetter = letter; html += `<div class="gloss-alpha">${letter}</div>`; }
-    html += `<div class="gloss-item"><div class="gloss-term">${g.term}</div><div class="gloss-def">${g.def}</div></div>`;
-  });
-  container.innerHTML = html || '<p style="color:var(--muted);text-align:center;padding:24px">No terms found.</p>';
-}
-function filterGlossary() {
-  renderGlossary(document.getElementById('glossSearch').value.trim().toLowerCase());
-}
-renderGlossary();
+/* ── Reading Material: static educational content, no script required ── */
 
 /* ── MCQ Quiz Data ── */
 const quizData = [
