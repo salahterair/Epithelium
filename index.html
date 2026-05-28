@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Epithelium: Characteristics and Classification — Histology</title>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       TITLE: Replace with your lecture topic
+       Example: <title>Brachial Plexus — Clinical Anatomy</title>
+  ════════════════════════════════════════════════════════════════ -->
+  <title>Body Tissues — Year 1 Anatomy</title>
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -106,7 +112,7 @@
 
     /* ── Hero ── */
     .hero {
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+      background: linear-gradient(135deg, #1c3d6e 0%, #1e4a8a 55%, #2563a8 100%);
       color: #fff; border-radius: 22px;
       padding: 26px 20px; margin-bottom: 18px;
       text-align: center;
@@ -121,7 +127,6 @@
     }
     .hero h1 { font-size: 25px; font-weight: 900; margin-bottom: 7px; }
     .hero p { font-size: 13px; opacity: .88; max-width: 86%; margin: 0 auto; }
-
 
     /* ── Accordion ── */
     details {
@@ -153,7 +158,7 @@
     p { font-size: 13.5px; margin-bottom: 8px; }
     strong { font-weight: 700; }
 
-    /* ── Tables (contained, no page overflow) ── */
+    /* ── Tables ── */
     .table-wrap {
       overflow-x: auto; margin: 10px 0;
       border-radius: 10px; border: 1px solid var(--border);
@@ -164,12 +169,12 @@
     th { background: var(--blue); color: #fff; font-weight: 700; }
     tr:last-child td { border-bottom: none; }
 
-    .callout { background: var(--soft); border-left: 4px solid var(--blue); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
-    .clinical { background: #f0fdf4; border-left: 4px solid var(--green); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
-    .pharmacy { background: #fffbeb; border-left: 4px solid var(--amber); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
+    /* ── Callout blocks ── */
+    .callout  { background: var(--soft);   border-left: 4px solid var(--blue);  padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
+    .clinical { background: #f0fdf4;       border-left: 4px solid var(--green); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
+    .pharmacy { background: #fffbeb;       border-left: 4px solid var(--amber); padding: 10px 14px; border-radius: 10px; margin: 10px 0; font-size: 13px; }
     body.dark .clinical { background: #1a2e1a; }
     body.dark .pharmacy { background: #2d2a14; }
-
 
     /* ── Flashcards ── */
     .fc-counter-row {
@@ -224,25 +229,6 @@
     .fc-btn:active { opacity: .8; }
     .fc-btn.prev { background: var(--border); color: var(--text); }
     .fc-btn.next { background: var(--blue); color: white; }
-
-    /* ── Glossary ── */
-    .gloss-search {
-      width: 100%; padding: 10px 16px;
-      border-radius: 40px; border: 1.5px solid var(--border);
-      background: var(--bg); color: var(--text);
-      font-size: 14px; outline: none; margin-bottom: 14px;
-      transition: border-color .2s;
-    }
-    .gloss-search:focus { border-color: var(--blue); }
-    .gloss-alpha { font-size: 11px; font-weight: 800; color: var(--blue); padding: 12px 2px 4px; letter-spacing: 1px; }
-    .gloss-item {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 14px; padding: 13px 16px; margin-bottom: 8px;
-    }
-    .gloss-term { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
-    .gloss-def { font-size: 13px; color: var(--muted); line-height: 1.5; }
-
-
 
     /* ── Reading Material ── */
     .reading-card {
@@ -314,7 +300,17 @@
       line-height: 1.6;
     }
     body.dark .reading-clinical { background: #1a2e1a; }
-    body.dark .reading-warning { background: #2d2a14; }
+    body.dark .reading-warning  { background: #2d2a14; }
+    body.dark .reading-chip {
+      background: #1e3a8a;
+      color: #dbeafe;
+      border-color: #3b82f6;
+    }
+    body.dark .reading-card mark {
+      background: #fde68a;
+      color: #111827;
+      font-weight: 700;
+    }
 
     /* ── Quiz ── */
     .quiz-prog { height: 5px; background: var(--border); border-radius: 5px; margin-bottom: 18px; }
@@ -335,9 +331,9 @@
     }
     .quiz-opt:disabled { cursor: default; }
     .quiz-opt.correct { border-color: var(--green); background: #f0fdf4; color: #15803d; font-weight: 700; }
-    .quiz-opt.wrong { border-color: #ef4444; background: #fef2f2; color: #dc2626; }
+    .quiz-opt.wrong   { border-color: #ef4444;      background: #fef2f2; color: #dc2626; }
     body.dark .quiz-opt.correct { background: #1a2e1a; color: #4ade80; }
-    body.dark .quiz-opt.wrong { background: #2e1a1a; color: #f87171; }
+    body.dark .quiz-opt.wrong   { background: #2e1a1a; color: #f87171; }
 
     .quiz-exp {
       background: var(--soft); border-left: 4px solid var(--blue);
@@ -353,27 +349,27 @@
     }
     .quiz-next:active { opacity: .85; }
 
-    /* Score card */
+    /* ── Score card ── */
     .score-card {
       background: var(--card); border: 1px solid var(--border);
       border-radius: 24px; padding: 40px 24px;
       text-align: center; display: none;
     }
     .score-emoji { font-size: 58px; margin-bottom: 12px; }
-    .score-num { font-size: 50px; font-weight: 900; color: var(--blue); line-height: 1; }
-    .score-sub { color: var(--muted); font-size: 14px; margin: 8px 0 24px; }
+    .score-num   { font-size: 50px; font-weight: 900; color: var(--blue); line-height: 1; }
+    .score-sub   { color: var(--muted); font-size: 14px; margin: 8px 0 24px; }
     .quiz-restart {
       background: var(--blue); color: white; border: none;
       padding: 13px 32px; border-radius: 40px;
       font-size: 15px; font-weight: 700; cursor: pointer;
     }
 
-    /* Page header */
+    /* ── Page header ── */
     .page-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
     .page-header h2 { font-size: 19px; font-weight: 800; }
     .ph-icon { font-size: 22px; }
 
-    /* Back to top */
+    /* ── Back to top ── */
     .backtop {
       position: fixed; right: 14px;
       bottom: calc(var(--tab-h) + 12px);
@@ -389,9 +385,7 @@
     }
     .backtop.visible { opacity: 1; pointer-events: auto; }
 
-
-
-    /* ── Section close control ── */
+    /* ── Section close button ── */
     .section-close-btn {
       display: block;
       margin: 14px auto 2px;
@@ -407,6 +401,31 @@
     }
     .section-close-btn:active { opacity: .82; }
 
+
+    .score-ring {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 14px;
+      display: block;
+    }
+    .score-ring-bg {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 12;
+    }
+    .score-ring-bar {
+      fill: none;
+      stroke: var(--blue);
+      stroke-width: 12;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 75px 75px;
+      stroke-dasharray: 377;
+      stroke-dashoffset: 377;
+      transition: stroke-dashoffset .7s ease;
+    }
+
+    /* ── Footer ── */
     .footer {
       text-align: center; padding: 22px 14px 8px;
       font-size: 12px; color: var(--blue); font-weight: 600;
@@ -418,382 +437,375 @@
 <!-- Progress bar -->
 <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
 
-<!-- Top Bar — dark mode only -->
+<!-- Top Bar -->
 <div class="top-bar">
   <button class="dark-btn" id="darkModeToggle">🌙 Dark</button>
 </div>
 
-<!-- ═══════════════════════════════════════
-     HOME (= LECTURE)
-════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TAB 1 — LECTURE (Accordion)
+     ─────────────────────────────────────────────────────────────
+     INSTRUCTIONS FOR CLAUDE:
+     • Replace the hero eyebrow, h1, and subtitle paragraph below
+     • Add 20–25 <details> accordion sections
+     • First section: Learning Objectives
+     • Last sections: Clinical Correlations, Review Questions, References
+     • Use .callout for key concepts (blue)
+     • Use .clinical for clinical correlations (green)
+     • Use .pharmacy for drug/pharmacology notes (amber)
+     • Use .table-wrap > table for comparison tables
+════════════════════════════════════════════════════════════════ -->
 <div class="page active" id="page-home">
 
   <section class="hero">
-    <div class="eyebrow">First-Year Medicine · General Histology</div>
-    <h1>Epithelium</h1>
-    <p>Characteristics, classification, surface specializations, glands &amp; clinical correlations</p>
+    <span class="eyebrow">Year 1 · Ibn Sina University · Anatomy</span>
+    <h1>Body Tissues</h1>
+    <p>Structural organization, epithelial tissue, connective tissue, muscle tissue, nervous tissue, and clinically relevant tissue repair.</p>
   </section>
 
-  <details id="sec1" open>
+  <details id="sec1">
     <summary>1. Learning Objectives</summary>
     <div class="content">
-      <ul>
-        <li>Define epithelial tissue and describe its general organization.</li>
-        <li>Explain the main characteristics of epithelial cells: polarity, junctions, basement membrane attachment, avascularity, and regeneration.</li>
-        <li>Classify covering epithelia according to number of layers and shape of surface cells.</li>
-        <li>Recognize the main types of simple, stratified, pseudostratified, and transitional epithelium.</li>
-        <li>Relate epithelial structure to function in common organs.</li>
-        <li>Describe the basic classification of glandular epithelium.</li>
-      </ul>
+<ul>
+<li>Define a tissue as a group of similar cells organized to perform a common function.</li>
+<li>Explain how tissues fit into the hierarchy from molecules and cells to organs and body systems.</li>
+<li>Identify the four major tissue types: epithelial, connective, muscle, and nervous tissue.</li>
+<li>Classify epithelial tissue according to cell layers and cell shape.</li>
+<li>Classify connective tissue into connective tissue proper and specialized connective tissues.</li>
+<li>Relate tissue structure to normal function, disease, repair, and selected clinical examples.</li>
+</ul>
+<div class="callout"><strong>Key concept:</strong> Anatomy becomes clinically meaningful when structure is linked to function. Normal tissue organization supports normal organ function, while abnormal tissue structure may produce disease.</div>
+
     </div>
   </details>
 
-  <details id="sec2">
-    <summary>2. What Is Epithelium?</summary>
+<details id="sec2">
+    <summary>2. Why Body Tissues Matter in Anatomy</summary>
     <div class="content">
-      <p>Epithelium is a tissue composed of closely packed cells that cover external body surfaces, line internal cavities and tubes, and form the secretory parts of glands.</p>
-      <div class="callout"><strong>Core idea:</strong> Epithelium is the body’s surface and lining tissue. It forms selective barriers between the external environment, body cavities, and underlying connective tissue.</div>
+<p>Body tissues are the basic working materials from which organs are built. A blood vessel, bone, stomach wall, nerve, and skin surface all contain tissues arranged in a specific pattern. Understanding tissues helps Year 1 students move from gross anatomical structures to the microscopic basis of organ function.</p>
+<div class="callout"><strong>Key concept:</strong> A tissue is not just a collection of cells. It is a functional arrangement of cells and extracellular material that performs a defined task.</div>
+<div class="clinical"><strong>Clinical link:</strong> Many diseases begin as tissue-level changes. For example, epithelial injury may lead to ulceration, connective tissue weakness may affect support, and nervous tissue damage may impair sensation or movement.</div>
+
     </div>
   </details>
 
-  <details id="sec3">
-    <summary>3. Main Locations of Epithelium</summary>
+<details id="sec3">
+    <summary>3. Hierarchy of Structural Organization</summary>
     <div class="content">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Location</th><th>Example</th><th>Main Role</th></tr></thead>
-          <tbody>
-            <tr><td>External surface</td><td>Epidermis of skin</td><td>Protection from abrasion and dehydration</td></tr>
-            <tr><td>Internal cavities</td><td>Mouth, esophagus, stomach, intestine</td><td>Protection, secretion, absorption</td></tr>
-            <tr><td>Respiratory passages</td><td>Trachea and bronchi</td><td>Mucus secretion and mucociliary clearance</td></tr>
-            <tr><td>Blood and lymph vessels</td><td>Endothelium</td><td>Smooth lining for transport and exchange</td></tr>
-            <tr><td>Glands</td><td>Salivary, sweat, thyroid glands</td><td>Secretion</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>The human body is organized from smaller to larger levels. Molecules form organelles; organelles are found within cells; similar cells form tissues; multiple tissues combine to form organs; organs work together in systems; systems maintain the body as a whole.</p>
+<div class="table-wrap"><table><thead><tr><th>Level</th><th>Description</th><th>Example</th></tr></thead><tbody>
+<tr><td>Chemical level</td><td>Atoms and molecules</td><td>Calcium ions, proteins, lipids</td></tr>
+<tr><td>Cellular level</td><td>Cells and their organelles</td><td>Smooth muscle cell, neuron</td></tr>
+<tr><td>Tissue level</td><td>Similar cells performing a common function</td><td>Epithelial tissue, connective tissue</td></tr>
+<tr><td>Organ level</td><td>More than one tissue forming a discrete structure</td><td>Heart, lung, stomach, skin</td></tr>
+<tr><td>System level</td><td>Organs working together for a common purpose</td><td>Cardiovascular, respiratory, gastrointestinal systems</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>Key concept:</strong> The lecture source emphasizes the sequence cells → tissues → organs → systems → body as a core organizing framework.</div>
+
     </div>
   </details>
 
-  <details id="sec4">
-    <summary>4. General Characteristics of Epithelium</summary>
+<details id="sec4">
+    <summary>4. Normal Structure, Normal Function, and Health</summary>
     <div class="content">
-      <ul>
-        <li><strong>High cellularity:</strong> cells are very close together with little extracellular matrix.</li>
-        <li><strong>Polarity:</strong> each cell has apical, lateral, and basal domains.</li>
-        <li><strong>Specialized junctions:</strong> cells are attached to each other by junctional complexes.</li>
-        <li><strong>Basement membrane:</strong> basal surface is supported by a basement membrane.</li>
-        <li><strong>Avascularity:</strong> epithelium contains no blood vessels.</li>
-        <li><strong>Regeneration:</strong> epithelial cells commonly show active mitosis and renewal.</li>
-      </ul>
+<p>Normal molecules support normal cell structure. Normal cells maintain normal tissue architecture. Normal tissues support normal organ action, and normal organs maintain system function. This chain explains why anatomical structure and physiological function should be studied together.</p>
+<div class="clinical"><strong>Clinical link:</strong> Disease often reflects disruption of this chain. A molecular abnormality may change cell behavior, a cell abnormality may alter tissue structure, and tissue dysfunction may produce organ failure.</div>
+
     </div>
   </details>
 
-  <details id="sec5">
-    <summary>5. Cell Polarity</summary>
+<details id="sec5">
+    <summary>5. The Four Basic Tissue Types</summary>
     <div class="content">
-      <p>Epithelial cells are polarized, meaning different parts of the same cell have different structures and functions.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Domain</th><th>Faces</th><th>Common Features</th></tr></thead>
-          <tbody>
-            <tr><td>Apical</td><td>Lumen or external surface</td><td>Microvilli, cilia, stereocilia</td></tr>
-            <tr><td>Lateral</td><td>Neighboring cells</td><td>Tight junctions, adherens junctions, desmosomes, gap junctions</td></tr>
-            <tr><td>Basal</td><td>Connective tissue</td><td>Basement membrane attachment, hemidesmosomes</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="callout"><strong>Practical point:</strong> Always identify the free apical surface first when looking at epithelium under the microscope.</div>
+<p>The body contains four major tissue families: epithelial tissue, connective tissue, muscle tissue, and nervous tissue. Each family has a dominant functional role, but organs usually contain several tissue types working together.</p>
+<div class="table-wrap"><table><thead><tr><th>Tissue type</th><th>Main structural idea</th><th>Major functions</th><th>Examples</th></tr></thead><tbody>
+<tr><td>Epithelial tissue</td><td>Closely packed cells covering surfaces or forming glands</td><td>Protection, absorption, secretion, filtration, excretion, sensation</td><td>Epidermis, intestinal lining, glands</td></tr>
+<tr><td>Connective tissue</td><td>Cells separated by extracellular matrix</td><td>Support, binding, protection, storage, transport</td><td>Areolar tissue, adipose tissue, cartilage, bone, blood</td></tr>
+<tr><td>Muscle tissue</td><td>Elongated contractile cells</td><td>Movement, posture, propulsion, pumping</td><td>Skeletal, cardiac, smooth muscle</td></tr>
+<tr><td>Nervous tissue</td><td>Excitable cells and supporting cells</td><td>Communication, control, response to stimuli</td><td>Brain, spinal cord, peripheral nerves</td></tr>
+</tbody></table></div>
+
     </div>
   </details>
 
-  <details id="sec6">
-    <summary>6. Basement Membrane</summary>
+<details id="sec6">
+    <summary>6. Epithelial Tissue: General Features</summary>
     <div class="content">
-      <p>The basement membrane is a thin extracellular layer between epithelium and connective tissue. It supports epithelial cells and helps control cell attachment, growth, repair, and filtration.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Component</th><th>Main Source</th><th>Key Molecules</th></tr></thead>
-          <tbody>
-            <tr><td>Basal lamina</td><td>Epithelial cells</td><td>Laminin and type IV collagen</td></tr>
-            <tr><td>Reticular lamina</td><td>Connective tissue</td><td>Reticular fibers, mainly type III collagen</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Epithelial tissue covers body surfaces, lines cavities, forms glands, and separates compartments. It is characterized by tightly packed cells, little extracellular matrix, polarity, attachment to a basement membrane, absence of blood vessels, and a strong capacity for regeneration.</p>
+<div class="callout"><strong>Key concept:</strong> Epithelium is avascular, so nutrients reach epithelial cells by diffusion from underlying connective tissue.</div>
+<div class="clinical"><strong>Clinical link:</strong> Because epithelial surfaces face friction, chemicals, microbes, and dehydration, epithelial tissues are common sites of inflammation, metaplasia, ulcers, and carcinoma.</div>
+
     </div>
   </details>
 
-  <details id="sec7">
-    <summary>7. Avascularity and Nutrition</summary>
+<details id="sec7">
+    <summary>7. Functions of Epithelial Tissue</summary>
     <div class="content">
-      <p>Epithelium is avascular. It receives oxygen and nutrients by diffusion from blood vessels in the underlying connective tissue.</p>
-      <div class="clinical"><strong>Clinical link:</strong> Epithelial injury heals efficiently when the basement membrane and underlying connective tissue remain intact, because surviving epithelial cells can migrate and divide.</div>
+<p>Epithelial function depends on its location and structure. Thick stratified epithelium protects against abrasion. Thin simple squamous epithelium allows diffusion and filtration. Simple columnar epithelium with microvilli supports absorption and secretion. Glandular epithelium produces secretions.</p>
+<div class="table-wrap"><table><thead><tr><th>Function</th><th>Structural requirement</th><th>Example</th></tr></thead><tbody>
+<tr><td>Protection</td><td>Multiple layers and strong cell junctions</td><td>Skin epidermis, oral mucosa</td></tr>
+<tr><td>Absorption</td><td>Thin epithelium with apical specializations</td><td>Small intestine</td></tr>
+<tr><td>Secretion</td><td>Secretory epithelial cells or glands</td><td>Salivary glands, gastric glands</td></tr>
+<tr><td>Filtration</td><td>Very thin epithelial barrier</td><td>Renal corpuscle regions</td></tr>
+<tr><td>Sensation</td><td>Association with sensory receptors</td><td>Nasal mucosa, skin</td></tr>
+</tbody></table></div>
+
     </div>
   </details>
 
-  <details id="sec8">
-    <summary>8. Epithelial Junctions</summary>
+<details id="sec8">
+    <summary>8. Classification of Epithelium by Layers</summary>
     <div class="content">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Junction</th><th>Main Function</th><th>Simple Explanation</th></tr></thead>
-          <tbody>
-            <tr><td>Tight junction</td><td>Seals spaces between cells</td><td>Prevents uncontrolled passage between cells</td></tr>
-            <tr><td>Adherens junction</td><td>Cell-to-cell adhesion</td><td>Links actin cytoskeletons of neighboring cells</td></tr>
-            <tr><td>Desmosome</td><td>Strong mechanical attachment</td><td>Important in epithelia exposed to friction</td></tr>
-            <tr><td>Gap junction</td><td>Communication</td><td>Allows ions and small molecules to pass between cells</td></tr>
-            <tr><td>Hemidesmosome</td><td>Attachment to basement membrane</td><td>Anchors basal cell surface</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Epithelial tissue is first classified by the number of cell layers. Simple epithelium has one layer of cells and is commonly adapted for absorption, secretion, diffusion, or filtration. Stratified epithelium has multiple layers and is mainly adapted for protection.</p>
+<div class="table-wrap"><table><thead><tr><th>Layer pattern</th><th>Definition</th><th>Functional meaning</th></tr></thead><tbody>
+<tr><td>Simple</td><td>One cell layer; every cell rests on the basement membrane</td><td>Efficient exchange, absorption, secretion, filtration</td></tr>
+<tr><td>Stratified</td><td>Two or more layers; only basal cells contact the basement membrane</td><td>Mechanical protection against friction and injury</td></tr>
+<tr><td>Pseudostratified</td><td>Appears multilayered, but all cells contact the basement membrane</td><td>Often involved in secretion and movement of mucus</td></tr>
+<tr><td>Transitional</td><td>Stratified epithelium that changes shape with stretch</td><td>Allows urinary organs to distend</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>Classification rule:</strong> Name epithelial tissue by layers first, then by the shape of the surface cells.</div>
+
     </div>
   </details>
 
-  <details id="sec9">
-    <summary>9. Apical Surface Specializations</summary>
+<details id="sec9">
+    <summary>9. Classification of Epithelium by Cell Shape</summary>
     <div class="content">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Specialization</th><th>Structure</th><th>Function</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>Microvilli</td><td>Short actin-based projections</td><td>Increase absorptive surface area</td><td>Small intestine, kidney tubules</td></tr>
-            <tr><td>Cilia</td><td>Motile microtubule-based projections</td><td>Move mucus or fluid</td><td>Respiratory tract, uterine tube</td></tr>
-            <tr><td>Stereocilia</td><td>Long non-motile microvilli</td><td>Absorption or sensory function</td><td>Epididymis, inner ear</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>The second part of epithelial classification is based on the shape of the cells at the free surface. Squamous cells are flat, cuboidal cells are roughly cube-shaped, and columnar cells are taller than they are wide.</p>
+<div class="table-wrap"><table><thead><tr><th>Cell shape</th><th>Appearance</th><th>Typical role</th></tr></thead><tbody>
+<tr><td>Squamous</td><td>Thin, flat cells</td><td>Diffusion, filtration, smooth lining</td></tr>
+<tr><td>Cuboidal</td><td>Cells with similar height and width</td><td>Secretion and absorption</td></tr>
+<tr><td>Columnar</td><td>Tall cells with basal nuclei</td><td>Absorption, secretion, protection</td></tr>
+</tbody></table></div>
+<div class="clinical"><strong>Clinical link:</strong> When surface epithelium is repeatedly irritated, adaptive change may occur. For example, chronic irritation can alter epithelial phenotype and increase disease risk.</div>
+
     </div>
   </details>
 
-  <details id="sec10">
-    <summary>10. Functions of Epithelium</summary>
+<details id="sec10">
+    <summary>10. Glandular Epithelium</summary>
     <div class="content">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Function</th><th>Typical Epithelium</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>Protection</td><td>Stratified squamous</td><td>Skin, oral cavity, esophagus</td></tr>
-            <tr><td>Absorption</td><td>Simple columnar or cuboidal</td><td>Intestine, kidney tubules</td></tr>
-            <tr><td>Secretion</td><td>Glandular epithelium</td><td>Salivary glands, gastric glands</td></tr>
-            <tr><td>Diffusion</td><td>Simple squamous</td><td>Alveoli, capillaries</td></tr>
-            <tr><td>Transport</td><td>Ciliated epithelium</td><td>Trachea, uterine tube</td></tr>
-            <tr><td>Stretching</td><td>Transitional epithelium</td><td>Urinary bladder</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Glandular epithelium is specialized for secretion. Endocrine glands are ductless and release hormones into blood or tissue fluid. Exocrine glands use ducts to deliver secretions onto body surfaces or into body cavities.</p>
+<div class="table-wrap"><table><thead><tr><th>Gland type</th><th>Ducts</th><th>Product pathway</th><th>Example</th></tr></thead><tbody>
+<tr><td>Endocrine</td><td>Absent</td><td>Hormones enter blood or interstitial fluid</td><td>Thyroid gland</td></tr>
+<tr><td>Exocrine</td><td>Present</td><td>Secretion reaches epithelial surface through ducts</td><td>Salivary, sweat, sebaceous glands</td></tr>
+</tbody></table></div>
+<div class="pharmacy"><strong>Pharmacology link:</strong> Many drugs act on epithelial secretions. Anticholinergic drugs may reduce salivary secretion, causing dry mouth, while some respiratory drugs modify mucus production or clearance.</div>
+
     </div>
   </details>
 
-  <details id="sec11">
-    <summary>11. Basis of Classification</summary>
+<details id="sec11">
+    <summary>11. Connective Tissue: General Features</summary>
     <div class="content">
-      <p>Covering epithelium is classified using two criteria:</p>
-      <ol>
-        <li><strong>Number of cell layers:</strong> simple, stratified, or pseudostratified.</li>
-        <li><strong>Shape of surface cells:</strong> squamous, cuboidal, or columnar.</li>
-      </ol>
-      <div class="callout"><strong>Rule:</strong> In stratified epithelium, classification is based on the shape of the surface cells, not the deepest cells.</div>
+<p>Connective tissue supports, binds, protects, stores, and transports. Unlike epithelium, connective tissue usually contains fewer cells and more extracellular matrix. The matrix includes fibers and ground substance, and its composition determines tissue strength, flexibility, and function.</p>
+<div class="callout"><strong>Key concept:</strong> Connective tissue is defined by extracellular matrix. The matrix may be soft and hydrated, firm and flexible, hard and calcified, or fluid.</div>
+
     </div>
   </details>
 
-  <details id="sec12">
-    <summary>12. Simple Epithelia</summary>
+<details id="sec12">
+    <summary>12. Classification of Connective Tissue</summary>
     <div class="content">
-      <p>Simple epithelium has one layer of cells. Because every cell touches the basement membrane, simple epithelia are usually specialized for diffusion, filtration, absorption, and secretion rather than strong mechanical protection.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Type</th><th>Main Function</th><th>Common Location</th></tr></thead>
-          <tbody>
-            <tr><td>Simple squamous</td><td>Rapid diffusion and filtration</td><td>Alveoli, endothelium, mesothelium</td></tr>
-            <tr><td>Simple cuboidal</td><td>Secretion and absorption</td><td>Kidney tubules, thyroid follicles</td></tr>
-            <tr><td>Simple columnar</td><td>Absorption and secretion</td><td>Stomach, intestine, gallbladder</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Connective tissue can be organized into connective tissue proper and specialized connective tissues. Connective tissue proper includes loose areolar, dense, reticular, and adipose tissue. Specialized connective tissue includes cartilage, bone, and blood.</p>
+<div class="table-wrap"><table><thead><tr><th>Main group</th><th>Types</th><th>Major role</th></tr></thead><tbody>
+<tr><td>Connective tissue proper</td><td>Loose areolar, dense, reticular, adipose</td><td>Binding, packing, support, storage</td></tr>
+<tr><td>Specialized connective tissue</td><td>Cartilage, bone, blood</td><td>Flexible support, rigid support, transport</td></tr>
+</tbody></table></div>
+<div class="clinical"><strong>Clinical link:</strong> Connective tissue disorders may present with joint laxity, fragile skin, poor wound healing, abnormal bleeding, or bone fragility depending on the affected component.</div>
+
     </div>
   </details>
 
-  <details id="sec13">
-    <summary>13. Simple Squamous Epithelium</summary>
+<details id="sec13">
+    <summary>13. Loose Areolar Connective Tissue</summary>
     <div class="content">
-      <p>Simple squamous epithelium consists of a single layer of flat cells with flattened nuclei. It is very thin, making it ideal for diffusion, filtration, and smooth lining surfaces.</p>
-      <ul>
-        <li><strong>Alveoli:</strong> gas exchange.</li>
-        <li><strong>Endothelium:</strong> lining of blood and lymph vessels.</li>
-        <li><strong>Mesothelium:</strong> lining of pleural, pericardial, and peritoneal cavities.</li>
-      </ul>
+<p>Loose areolar connective tissue is a flexible packing tissue found beneath epithelia and around blood vessels and nerves. It contains cells, collagen fibers, elastic fibers, and ground substance. It allows diffusion, provides support, and participates in inflammation and tissue repair.</p>
+<div class="callout"><strong>Key concept:</strong> Areolar tissue often forms the supportive layer under epithelial tissue, making it important for epithelial nutrition and repair.</div>
+
     </div>
   </details>
 
-  <details id="sec14">
-    <summary>14. Simple Cuboidal Epithelium</summary>
+<details id="sec14">
+    <summary>14. Dense Connective Tissue</summary>
     <div class="content">
-      <p>Simple cuboidal epithelium consists of one layer of cube-shaped cells with centrally placed round nuclei. It is commonly involved in secretion and absorption.</p>
-      <div class="clinical"><strong>Examples:</strong> Kidney tubules, thyroid follicles, small ducts of exocrine glands, and the surface of the ovary.</div>
+<p>Dense connective tissue contains abundant collagen fibers and provides tensile strength. Dense regular connective tissue has parallel collagen bundles, as in tendons and ligaments. Dense irregular connective tissue has collagen arranged in multiple directions, as in the dermis and organ capsules.</p>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Fiber arrangement</th><th>Functional meaning</th><th>Example</th></tr></thead><tbody>
+<tr><td>Dense regular</td><td>Parallel collagen bundles</td><td>Resists force in one main direction</td><td>Tendon, ligament</td></tr>
+<tr><td>Dense irregular</td><td>Interwoven collagen bundles</td><td>Resists stress from many directions</td><td>Dermis, fibrous capsules</td></tr>
+</tbody></table></div>
+
     </div>
   </details>
 
-  <details id="sec15">
-    <summary>15. Simple Columnar Epithelium</summary>
+<details id="sec15">
+    <summary>15. Reticular and Adipose Tissue</summary>
     <div class="content">
-      <p>Simple columnar epithelium consists of tall cells with oval nuclei usually located near the basal region. It is common in organs specialized for absorption and secretion.</p>
-      <ul>
-        <li><strong>Intestine:</strong> absorptive cells with microvilli and goblet cells.</li>
-        <li><strong>Stomach:</strong> mucus-secreting columnar cells.</li>
-        <li><strong>Gallbladder:</strong> absorptive columnar epithelium.</li>
-      </ul>
+<p>Reticular connective tissue forms a delicate supporting framework in lymphoid organs and bone marrow. Adipose tissue is a loose connective tissue composed mainly of lipid-storing adipocytes. It stores energy, cushions organs, provides insulation, and contributes to endocrine regulation.</p>
+<div class="clinical"><strong>Clinical link:</strong> The lecture source identifies adipose tissue as loose connective tissue with large lipid-storing cells. In clinical anatomy, fat distribution affects body habitus, surgical planes, and metabolic risk.</div>
+<div class="pharmacy"><strong>Pharmacology link:</strong> Lipid-soluble drugs may distribute into adipose tissue, which can influence apparent volume of distribution and duration of action.</div>
+
     </div>
   </details>
 
-  <details id="sec16">
-    <summary>16. Pseudostratified Columnar Epithelium</summary>
+<details id="sec16">
+    <summary>16. Cartilage</summary>
     <div class="content">
-      <p>Pseudostratified epithelium appears multilayered because nuclei are at different levels, but all cells contact the basement membrane. The classic example is respiratory epithelium.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Feature</th><th>Significance</th></tr></thead>
-          <tbody>
-            <tr><td>Cilia</td><td>Move mucus toward the pharynx</td></tr>
-            <tr><td>Goblet cells</td><td>Secrete mucus to trap dust and microbes</td></tr>
-            <tr><td>Basal cells</td><td>Stem cells for epithelial renewal</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Cartilage is a specialized connective tissue with a firm, flexible extracellular matrix. Chondrocytes lie in lacunae, and cartilage generally lacks blood vessels. Because it is avascular, repair is slower than in vascular connective tissues.</p>
+<div class="table-wrap"><table><thead><tr><th>Cartilage type</th><th>Main feature</th><th>Example</th></tr></thead><tbody>
+<tr><td>Hyaline cartilage</td><td>Smooth glassy matrix; supports and reduces friction</td><td>Articular cartilage, costal cartilage, tracheal rings</td></tr>
+<tr><td>Elastic cartilage</td><td>Elastic fibers provide flexibility</td><td>Auricle, epiglottis</td></tr>
+<tr><td>Fibrocartilage</td><td>Strong collagen-rich cartilage</td><td>Intervertebral discs, pubic symphysis</td></tr>
+</tbody></table></div>
+<div class="clinical"><strong>Clinical link:</strong> Damage to articular cartilage can cause pain and reduced joint movement because cartilage has limited regenerative capacity.</div>
+
     </div>
   </details>
 
-  <details id="sec17">
-    <summary>17. Stratified Squamous Epithelium</summary>
+<details id="sec17">
+    <summary>17. Bone or Osseous Tissue</summary>
     <div class="content">
-      <p>Stratified squamous epithelium has many layers and flat surface cells. Its main function is protection against friction and mechanical injury.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Type</th><th>Surface Cells</th><th>Location</th><th>Main Protection</th></tr></thead>
-          <tbody>
-            <tr><td>Keratinized</td><td>Dead, keratin-filled cells</td><td>Epidermis</td><td>Abrasion and dehydration</td></tr>
-            <tr><td>Non-keratinized</td><td>Living moist cells</td><td>Oral cavity, esophagus, vagina</td><td>Abrasion in moist surfaces</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Bone is a specialized connective tissue with cells, fibers, ground substance, and a calcified extracellular matrix. The mineralized matrix gives bone rigidity and enables support, protection, leverage for movement, mineral storage, and housing of bone marrow.</p>
+<div class="table-wrap"><table><thead><tr><th>Function</th><th>Anatomical meaning</th></tr></thead><tbody>
+<tr><td>Support</td><td>Forms an internal framework for the body</td></tr>
+<tr><td>Attachment</td><td>Provides surfaces for muscles and tendons</td></tr>
+<tr><td>Protection</td><td>Protects cranial and thoracic organs</td></tr>
+<tr><td>Mineral reservoir</td><td>Stores calcium and phosphate</td></tr>
+<tr><td>Hemopoiesis</td><td>Contains marrow spaces for blood cell formation</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>Key concept:</strong> Bone is connective tissue, but its extracellular matrix is calcified.</div>
+
     </div>
   </details>
 
-  <details id="sec18">
-    <summary>18. Transitional Epithelium</summary>
+<details id="sec18">
+    <summary>18. Macroscopic Structure of a Long Bone</summary>
     <div class="content">
-      <p>Transitional epithelium, also called urothelium, lines the urinary tract. It is specialized for distension and forms a barrier against the toxic effect of urine.</p>
-      <ul>
-        <li>Found in the renal calyces, renal pelvis, ureter, urinary bladder, and proximal urethra.</li>
-        <li>Surface umbrella cells appear dome-shaped when relaxed and flatter when stretched.</li>
-        <li>It prevents urine leakage into underlying tissue.</li>
-      </ul>
+<p>A long bone is organized into regions. The diaphysis is the shaft. The epiphyses are the ends. The metaphysis lies between the shaft and the end. In growing bones, the epiphyseal plate is the growth region. The medullary cavity contains marrow, while trabeculae form a lattice of spongy bone.</p>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Diaphysis</td><td>Shaft of a long bone</td></tr>
+<tr><td>Epiphysis</td><td>End of a long bone</td></tr>
+<tr><td>Metaphysis</td><td>Region between diaphysis and epiphysis</td></tr>
+<tr><td>Epiphyseal plate</td><td>Growth plate in immature bone</td></tr>
+<tr><td>Medullary cavity</td><td>Central marrow cavity</td></tr>
+<tr><td>Trabeculae</td><td>Thin bony columns forming spongy bone</td></tr>
+<tr><td>Articular cartilage</td><td>Hyaline cartilage covering joint surfaces</td></tr>
+</tbody></table></div>
+
     </div>
   </details>
 
-  <details id="sec19">
-    <summary>19. Glandular Epithelium</summary>
+<details id="sec19">
+    <summary>19. Bone Coverings: Periosteum and Endosteum</summary>
     <div class="content">
-      <p>Glandular epithelium is specialized for secretion. Glands may be unicellular, such as goblet cells, or multicellular, such as salivary glands.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Type</th><th>Duct?</th><th>Secretion Destination</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>Exocrine gland</td><td>Present</td><td>Surface or lumen</td><td>Sweat, salivary, sebaceous glands</td></tr>
-            <tr><td>Endocrine gland</td><td>Absent</td><td>Bloodstream</td><td>Thyroid, pituitary, adrenal glands</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="callout"><strong>Goblet cell:</strong> A unicellular exocrine gland that secretes mucus.</div>
+<p>The periosteum is the external covering of bone, except over articular cartilage and some tendon or ligament insertion areas. It is important for growth, repair, vascular supply, and tendon or ligament attachment. The endosteum lines internal bone surfaces, including marrow spaces and osteonic canals.</p>
+<div class="clinical"><strong>Clinical link:</strong> The periosteum is pain-sensitive. In fractures or inflammation, periosteal irritation contributes significantly to bone pain.</div>
+
     </div>
   </details>
 
-  <details id="sec20">
-    <summary>20. Exocrine Secretion Mechanisms</summary>
+<details id="sec20">
+    <summary>20. Blood as a Connective Tissue</summary>
     <div class="content">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Mode</th><th>Mechanism</th><th>Example</th></tr></thead>
-          <tbody>
-            <tr><td>Merocrine</td><td>Secretion by exocytosis</td><td>Salivary glands, pancreatic acini</td></tr>
-            <tr><td>Apocrine</td><td>Apical part of cell is released with secretion</td><td>Mammary gland lipid secretion</td></tr>
-            <tr><td>Holocrine</td><td>Whole cell breaks down and becomes secretion</td><td>Sebaceous gland</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Blood is a specialized connective tissue with a fluid extracellular matrix called plasma. It contains erythrocytes, leukocytes, and platelets. It also contains fibrinogen, a soluble protein that can be converted into fibrin during blood clotting.</p>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th>Main role</th></tr></thead><tbody>
+<tr><td>Erythrocytes</td><td>Transport oxygen and carbon dioxide</td></tr>
+<tr><td>Leukocytes</td><td>Defense and immune response</td></tr>
+<tr><td>Platelets</td><td>Hemostasis and clot formation</td></tr>
+<tr><td>Plasma</td><td>Fluid medium for transport of cells, proteins, nutrients, hormones, and waste</td></tr>
+<tr><td>Fibrinogen</td><td>Potential fiber-forming protein converted to fibrin during clotting</td></tr>
+</tbody></table></div>
+<div class="clinical"><strong>Clinical link:</strong> Anemia, leukocytosis, thrombocytopenia, and clotting disorders are examples of clinical problems involving blood as connective tissue.</div>
+
     </div>
   </details>
 
-  <details id="sec21">
-    <summary>21. Clinical Correlations</summary>
+<details id="sec21">
+    <summary>21. Muscle Tissue</summary>
     <div class="content">
-      <div class="clinical"><strong>Metaplasia:</strong> Chronic irritation may cause replacement of one mature epithelial type by another. For example, smoking can replace ciliated respiratory epithelium with stratified squamous epithelium, reducing mucociliary clearance.</div>
-      <div class="clinical"><strong>Carcinoma:</strong> Malignant tumors arising from epithelium are called carcinomas. Squamous cell carcinoma and adenocarcinoma are common examples.</div>
-      <div class="clinical"><strong>Ciliary dysfunction:</strong> Defective ciliary movement impairs mucus clearance and may cause recurrent respiratory infection.</div>
+<p>Muscle tissue is specialized for contraction. It is made of elongated cells that generate force and allow body movement, organ movement, and blood pumping. The lecture source highlights three important muscle properties: excitability, extensibility, and elasticity.</p>
+<div class="table-wrap"><table><thead><tr><th>Property</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Excitability</td><td>Ability to receive and respond to a stimulus</td></tr>
+<tr><td>Extensibility</td><td>Ability to be stretched</td></tr>
+<tr><td>Elasticity</td><td>Ability to return toward original shape after stretching or contraction</td></tr>
+</tbody></table></div>
+
     </div>
   </details>
 
-  <details id="sec22">
-    <summary>22. How to Identify Epithelium in Practical Histology</summary>
+<details id="sec22">
+    <summary>22. Three Types of Muscle Tissue</summary>
     <div class="content">
-      <ol>
-        <li>Find the free surface or lumen.</li>
-        <li>Count the number of cell layers.</li>
-        <li>Identify the shape of the surface cells.</li>
-        <li>Look for apical specializations such as cilia or microvilli.</li>
-        <li>Relate the epithelial type to its function and location.</li>
-      </ol>
-      <div class="callout"><strong>Example:</strong> A single layer of tall cells with goblet cells and brush border in the intestine is simple columnar epithelium specialized for absorption and secretion.</div>
+<p>Muscle tissue is classified into skeletal, cardiac, and smooth muscle. Skeletal muscle is striated and voluntary. Cardiac muscle is striated and involuntary. Smooth muscle is non-striated and involuntary.</p>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Striations</th><th>Control</th><th>Location</th></tr></thead><tbody>
+<tr><td>Skeletal muscle</td><td>Present</td><td>Voluntary</td><td>Attached to skeleton, facial muscles, diaphragm</td></tr>
+<tr><td>Cardiac muscle</td><td>Present</td><td>Involuntary</td><td>Myocardium of the heart</td></tr>
+<tr><td>Smooth muscle</td><td>Absent</td><td>Involuntary</td><td>Walls of hollow organs and blood vessels</td></tr>
+</tbody></table></div>
+<div class="clinical"><strong>Clinical link:</strong> Damage to skeletal muscle affects movement, damage to cardiac muscle affects pumping, and abnormal smooth muscle contraction may affect airway diameter, intestinal motility, or vascular tone.</div>
+<div class="pharmacy"><strong>Pharmacology link:</strong> Many drugs target smooth muscle contraction, such as bronchodilators in airway disease and vasodilators in vascular conditions.</div>
+
     </div>
   </details>
 
-  <details id="sec23">
-    <summary>23. Quick Classification Table</summary>
+<details id="sec23">
+    <summary>23. Nervous Tissue</summary>
     <div class="content">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Epithelial Type</th><th>Recognition Feature</th><th>Typical Site</th></tr></thead>
-          <tbody>
-            <tr><td>Simple squamous</td><td>One layer of flat cells</td><td>Alveoli, capillaries</td></tr>
-            <tr><td>Simple cuboidal</td><td>One layer of cube-shaped cells</td><td>Kidney tubules, thyroid follicles</td></tr>
-            <tr><td>Simple columnar</td><td>One layer of tall cells</td><td>Intestine, stomach</td></tr>
-            <tr><td>Pseudostratified columnar</td><td>Nuclei at different levels; all cells touch basement membrane</td><td>Trachea</td></tr>
-            <tr><td>Stratified squamous</td><td>Many layers; flat surface cells</td><td>Skin, oral cavity, esophagus</td></tr>
-            <tr><td>Transitional</td><td>Dome-shaped umbrella cells; stretchable</td><td>Urinary bladder, ureter</td></tr>
-          </tbody>
-        </table>
-      </div>
+<p>Nervous tissue is specialized for irritability and conductivity. It includes neurons, which transmit electrical signals, and supporting neuroglial cells. It is found in the brain, spinal cord, and peripheral nerves. Nervous tissue carries information from sensory receptors to the central nervous system and from the central nervous system to effectors such as muscles and glands.</p>
+<div class="callout"><strong>Key concept:</strong> Nervous tissue provides rapid communication and coordination across body systems.</div>
+<div class="clinical"><strong>Clinical link:</strong> Nerve injury may produce sensory loss, weakness, abnormal reflexes, or autonomic dysfunction depending on the type and location of damaged fibers.</div>
+
     </div>
   </details>
 
-  <details id="sec24">
-    <summary>24. Student Review Questions</summary>
+<details id="sec24">
+    <summary>24. Tissue Repair and Regeneration</summary>
     <div class="content">
-      <ol>
-        <li>Why is simple squamous epithelium suitable for diffusion?</li>
-        <li>Why is stratified squamous epithelium suitable for protection?</li>
-        <li>How can pseudostratified epithelium appear multilayered if all cells touch the basement membrane?</li>
-        <li>What is the difference between keratinized and non-keratinized stratified squamous epithelium?</li>
-        <li>Why is transitional epithelium important in the urinary bladder?</li>
-      </ol>
+<p>Tissue repair depends on the type of tissue, the degree of injury, blood supply, and regenerative capacity. Epithelial tissue usually regenerates well because epithelial cells divide actively. Connective tissue contributes to scar formation. Cartilage repairs slowly because it is avascular. Nervous tissue in the central nervous system has limited regenerative capacity.</p>
+<div class="table-wrap"><table><thead><tr><th>Tissue</th><th>Typical repair capacity</th><th>Reason</th></tr></thead><tbody>
+<tr><td>Epithelium</td><td>Good</td><td>Frequent mitosis and stem cell renewal</td></tr>
+<tr><td>Connective tissue</td><td>Variable</td><td>Depends on vascularity and matrix</td></tr>
+<tr><td>Cartilage</td><td>Poor</td><td>Avascular matrix limits repair</td></tr>
+<tr><td>Bone</td><td>Good when aligned and vascularized</td><td>Active remodeling and blood supply</td></tr>
+<tr><td>Nervous tissue</td><td>Limited, especially in CNS</td><td>Low neuronal replacement and inhibitory environment</td></tr>
+</tbody></table></div>
+<div class="clinical"><strong>Clinical link:</strong> Wound healing often restores continuity, but not always the original tissue architecture. Scar tissue may be strong but less specialized than the tissue it replaces.</div>
+
     </div>
   </details>
 
-  <details id="sec25">
-    <summary>25. Suggested References</summary>
+<details id="sec25">
+    <summary>25. Clinical Correlations and Review Questions</summary>
     <div class="content">
-      <ul>
-        <li>Junqueira’s Basic Histology: Text and Atlas.</li>
-        <li>Wheater’s Functional Histology.</li>
-        <li>Ross &amp; Pawlina: Histology: A Text and Atlas.</li>
-      </ul>
+<div class="clinical"><strong>Clinical correlation:</strong> Epithelial ulceration reflects loss of surface lining and can occur in the gastrointestinal tract or skin. Cartilage injury may persist because cartilage is avascular. Bone fracture repair is more effective when blood supply and alignment are preserved. Nerve injury can cause loss of sensation or motor function.</div>
+<p><strong>Review questions:</strong></p>
+<ol>
+<li>What are the four major tissue types in the human body?</li>
+<li>Why is epithelium considered avascular, and how does it receive nutrition?</li>
+<li>How are epithelial tissues classified by layers and by cell shape?</li>
+<li>What is the difference between endocrine and exocrine glands?</li>
+<li>Why is bone classified as connective tissue despite being hard?</li>
+<li>Which connective tissue has a fluid extracellular matrix?</li>
+<li>What are the three types of muscle tissue and how do they differ?</li>
+<li>Why does cartilage repair more slowly than many other tissues?</li>
+</ol>
+
     </div>
   </details>
 
-  <div class="footer">Designed by Dr. Salaheldin Terair · Ibn Sina University</div>
-</div></div>
+  <div class="footer">Developed for medical education by Dr. Salaheldin Terair · 2026</div>
+</div>
 
-<!-- ═══════════════════════════════════════
-     FLASHCARDS
-════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TAB 2 — FLASHCARDS
+     ─────────────────────────────────────────────────────────────
+     INSTRUCTIONS FOR CLAUDE:
+     • The card UI below is complete — do NOT change any HTML structure
+     • Only replace the JavaScript flashcards array at the bottom of the file
+     • Provide 18–22 cards: mix anatomy terms, clinical scenarios, rules
+════════════════════════════════════════════════════════════════ -->
 <div class="page" id="page-flashcards">
   <div class="page-header">
     <span class="ph-icon">🃏</span>
@@ -803,18 +815,18 @@
   <div class="fc-counter-row">
     <span class="fc-counter" id="fcCounter">Card 1 of 20</span>
   </div>
-  <div class="fc-prog"><div class="fc-prog-fill" id="fcProgFill" style="width:5.00%"></div></div>
+  <div class="fc-prog"><div class="fc-prog-fill" id="fcProgFill" style="width:5%"></div></div>
 
   <div class="fc-scene">
     <div class="fc-card" id="fcCard" onclick="flipCard()">
       <div class="fc-face fc-front">
         <div class="fc-face-label">Review Focus</div>
-        <div class="fc-term" id="fcTerm">Epithelium</div>
-        <div class="fc-hint">Tap to reveal clinical/application point</div>
+        <div class="fc-term" id="fcTerm">Loading…</div>
+        <div class="fc-hint">Tap to reveal key point</div>
       </div>
       <div class="fc-face fc-back">
-        <div class="fc-face-label">Clinical Correlation</div>
-        <div class="fc-def" id="fcDef">A tissue of closely packed cells that covers body surfaces, lines cavities and tubes, and forms glands.</div>
+        <div class="fc-face-label">Key Point</div>
+        <div class="fc-def" id="fcDef"></div>
       </div>
     </div>
   </div>
@@ -825,80 +837,85 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     READING MATERIAL
-════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TAB 3 — READING MATERIAL
+     ─────────────────────────────────────────────────────────────
+     INSTRUCTIONS FOR CLAUDE:
+     • Replace all <article class="reading-card"> blocks below
+     • Provide 4–6 narrative reading cards
+     • Use continuous prose — no bullet points
+     • Use <mark> for key terms inline
+     • Use .reading-keybox for blue key concept boxes
+     • Use .reading-clinical for green clinical correlation boxes
+     • Use .reading-warning for amber exam pitfall / caution boxes
+     • Update the estimated reading time chip
+════════════════════════════════════════════════════════════════ -->
 <div class="page" id="page-reading">
   <div class="page-header">
     <span class="ph-icon">📚</span>
     <h2>Reading Material</h2>
   </div>
 
+  
   <div class="reading-meta">
-    <span class="reading-chip">Estimated reading time: 8–10 minutes</span>
-    <span class="reading-chip">First-Year Medicine</span>
-    <span class="reading-chip">General Histology</span>
+    <span class="reading-chip">Estimated reading time: 12–15 minutes</span>
   </div>
 
   <article class="reading-card">
-    <h3>1. Overview of Epithelial Tissue</h3>
-    <p><strong>Epithelium</strong> is one of the basic tissues of the body. It forms the cellular covering of external surfaces, lines internal cavities and tubes, and forms the secretory component of glands. Because epithelial cells are closely packed, this tissue is well suited to form <mark>selective barriers</mark> between the external environment, body spaces, and underlying connective tissue.</p>
-    <p>The functions of epithelium depend on its structure. Thin epithelium favors diffusion and filtration, while multilayered epithelium provides protection. Columnar and cuboidal cells are commonly involved in secretion and absorption, especially when their apical surface is modified by microvilli or cilia.</p>
-    <div class="reading-keybox"><strong>Key concept:</strong> Always connect epithelial structure with function. A thin lining usually supports exchange; a thick multilayered lining usually supports protection.</div>
+    <h3>1. From Cells to Tissues and Organs</h3>
+    <p>The study of body tissues begins with the idea that the body is organized in levels. Molecules and organelles support the life of cells, while groups of similar cells cooperate to form a <mark>tissue</mark>. A tissue is therefore a functional unit, not merely a collection of cells. When several tissues are arranged together, they form an organ, and organs cooperate within body systems to support life.</p>
+    <p>This hierarchy explains why anatomy is clinically important. A small disturbance at the cellular level may produce a tissue abnormality, and a tissue abnormality may alter organ function. In the healthy body, structure and function are aligned; in disease, structural change often produces functional loss.</p>
+    <div class="reading-keybox"><strong>Key concept:</strong> Tissues connect microscopic anatomy with gross anatomy because organs are built from organized combinations of tissue types.</div>
   </article>
 
   <article class="reading-card">
-    <h3>2. Main Characteristics of Epithelium</h3>
-    <p>Epithelial tissue is characterized by <strong>high cellularity</strong>, meaning that cells are closely arranged with very little extracellular matrix. The cells show <strong>polarity</strong>, with distinct apical, lateral, and basal domains. The <mark>apical surface</mark> faces a lumen or external surface, while the <mark>basal surface</mark> rests on the basement membrane.</p>
-    <p>Epithelium is usually <strong>avascular</strong>, so it receives oxygen and nutrients by diffusion from blood vessels in the underlying connective tissue. Many epithelia also have a high capacity for <strong>regeneration</strong>, which is important because epithelial surfaces are frequently exposed to mechanical stress, chemical irritation, and microbial contact.</p>
-    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Superficial epithelial injury may heal efficiently if the basement membrane and underlying connective tissue remain intact, because surviving epithelial cells can migrate and divide.</div>
+    <h3>2. Epithelial Tissue as a Surface and Glandular Tissue</h3>
+    <p><mark>Epithelial tissue</mark> covers surfaces, lines cavities, and forms glands. Its cells are closely packed and supported by a basement membrane. Because epithelium is <mark>avascular</mark>, it depends on diffusion from the underlying connective tissue for nutrition. This arrangement is suitable for protection, absorption, secretion, filtration, excretion, and sensation.</p>
+    <p>Epithelial classification depends first on the number of layers and then on the shape of the surface cells. Simple epithelium is usually adapted for exchange, absorption, or secretion, while stratified epithelium is usually adapted for protection. Glandular epithelium forms endocrine glands, which release hormones without ducts, and exocrine glands, which deliver secretions through ducts.</p>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Epithelial surfaces are common sites of ulceration, infection, irritation, and neoplasia because they are exposed to mechanical and chemical stress.</div>
+    <div class="reading-warning"><strong>Common exam confusion:</strong> Stratified epithelium is named according to the shape of the cells at the free surface, not the basal layer.</div>
   </article>
 
   <article class="reading-card">
-    <h3>3. Basement Membrane and Cell Junctions</h3>
-    <p>The <strong>basement membrane</strong> is a thin extracellular layer that supports epithelium and separates it from connective tissue. It includes the <mark>basal lamina</mark>, produced mainly by epithelial cells, and the <mark>reticular lamina</mark>, contributed by connective tissue. Important molecules include laminin, type IV collagen, and type III collagen.</p>
-    <p>Epithelial cells are joined by specialized junctions. <strong>Tight junctions</strong> seal the space between cells, <strong>desmosomes</strong> resist mechanical stress, <strong>gap junctions</strong> allow communication, and <strong>hemidesmosomes</strong> anchor epithelial cells to the basement membrane.</p>
-    <div class="reading-warning"><strong>Common exam confusion:</strong> Desmosomes attach cells to neighboring cells, while hemidesmosomes attach epithelial cells to the basement membrane.</div>
+    <h3>3. Connective Tissue and the Importance of Matrix</h3>
+    <p><mark>Connective tissue</mark> supports, binds, protects, stores, and transports. Its defining feature is the extracellular matrix, which may be soft, firm, calcified, or fluid. Connective tissue proper includes loose areolar tissue, dense connective tissue, reticular tissue, and adipose tissue. Specialized connective tissues include cartilage, bone, and blood.</p>
+    <p>Adipose tissue consists mainly of lipid-storing cells and acts as an energy store, cushion, and insulator. Cartilage provides firm but flexible support, especially in joints and respiratory passages. Bone has a calcified matrix that provides support, protection, mineral storage, and a site for blood cell formation. Blood is also connective tissue because its cells are suspended in a fluid extracellular matrix called plasma.</p>
+    <div class="reading-keybox"><strong>Key concept:</strong> The physical character of connective tissue depends more on its extracellular matrix than on cell crowding.</div>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Cartilage has limited repair capacity because it lacks blood vessels, while bone can repair effectively if blood supply and alignment are preserved.</div>
   </article>
 
   <article class="reading-card">
-    <h3>4. Classification of Covering Epithelium</h3>
-    <p>Covering epithelium is classified using two criteria: the <strong>number of layers</strong> and the <strong>shape of the surface cells</strong>. Simple epithelium has one layer of cells. Stratified epithelium has two or more layers. Pseudostratified epithelium appears multilayered, but all cells touch the basement membrane.</p>
-    <p>The surface cell shape may be <mark>squamous</mark>, <mark>cuboidal</mark>, or <mark>columnar</mark>. In stratified epithelium, classification is based on the surface cells, not the basal cells. Therefore, many layers with flat surface cells are called <strong>stratified squamous epithelium</strong>.</p>
-    <div class="reading-keybox"><strong>Histology identification tip:</strong> Find the free surface first, count the layers, then identify the shape of the surface cells.</div>
+    <h3>4. Bone, Blood, and Structural Support</h3>
+    <p>Bone is a specialized connective tissue composed of cells, fibers, ground substance, and mineralized matrix. In a long bone, the <mark>diaphysis</mark> forms the shaft, the <mark>epiphyses</mark> form the ends, and the <mark>metaphysis</mark> lies between them. The medullary cavity contains marrow, and trabeculae form the internal lattice of spongy bone.</p>
+    <p>The periosteum covers the external bone surface except where articular cartilage is present, while the endosteum lines internal bone surfaces. Blood, although fluid, belongs to the connective tissue family because plasma functions as its extracellular matrix and its cells include erythrocytes, leukocytes, and platelets.</p>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Periosteal irritation is an important source of pain in fractures because the periosteum is richly innervated.</div>
+    <div class="reading-warning"><strong>Common exam confusion:</strong> Blood is not epithelial tissue and not simply a fluid; it is a specialized connective tissue with plasma as its matrix.</div>
   </article>
 
   <article class="reading-card">
-    <h3>5. Simple Epithelia</h3>
-    <p><strong>Simple squamous epithelium</strong> is very thin and is ideal for diffusion and filtration. It is found in alveoli, blood vessels as endothelium, and serous cavities as mesothelium. <strong>Simple cuboidal epithelium</strong> is commonly involved in secretion and absorption, such as in kidney tubules and thyroid follicles.</p>
-    <p><strong>Simple columnar epithelium</strong> consists of tall cells and is common in the gastrointestinal tract. In the intestine, it supports absorption and secretion, often with microvilli and goblet cells. In the stomach, columnar epithelial cells are specialized mainly for mucus secretion and mucosal protection.</p>
-    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Damage to intestinal epithelium may impair absorption because the absorptive surface and brush border are essential for nutrient uptake.</div>
+    <h3>5. Muscle and Nervous Tissue as Excitable Tissues</h3>
+    <p><mark>Muscle tissue</mark> is specialized for contraction. Skeletal muscle is striated and voluntary, cardiac muscle is striated and involuntary, and smooth muscle is non-striated and involuntary. The important properties of muscle include excitability, extensibility, and elasticity. These properties allow muscle to respond to stimuli, stretch, and return toward its original shape.</p>
+    <p><mark>Nervous tissue</mark> is specialized for irritability and conductivity. It is found in the brain, spinal cord, and nerves, and it transmits signals from sensory receptors to the central nervous system and from the central nervous system to effectors such as muscles and glands. Together, muscle and nervous tissue allow movement, coordination, and rapid response to the environment.</p>
+    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Damage to nervous tissue may cause sensory loss, weakness, or altered reflexes, while damage to muscle tissue may impair movement, posture, breathing, or cardiac pumping depending on the type involved.</div>
   </article>
 
-  <article class="reading-card">
-    <h3>6. Pseudostratified, Stratified, and Transitional Epithelium</h3>
-    <p><strong>Pseudostratified columnar epithelium</strong> is classically found in the respiratory tract. Its nuclei appear at different levels, giving a false impression of multiple layers. Respiratory epithelium commonly contains cilia, goblet cells, and basal cells. Cilia move mucus, goblet cells secrete mucus, and basal cells contribute to renewal.</p>
-    <p><strong>Stratified squamous epithelium</strong> is adapted for protection against abrasion. It may be keratinized, as in the epidermis, or non-keratinized, as in the oral cavity and esophagus. <strong>Transitional epithelium</strong>, or urothelium, lines much of the urinary tract and allows stretching while maintaining a barrier against urine.</p>
-    <div class="reading-clinical"><strong>Clinical Correlation:</strong> Chronic smoking may cause metaplasia of respiratory epithelium, replacing ciliated pseudostratified epithelium with stratified squamous epithelium and reducing mucociliary clearance.</div>
-  </article>
 
-  <article class="reading-card">
-    <h3>7. Glandular Epithelium</h3>
-    <p><strong>Glandular epithelium</strong> is specialized for secretion. Exocrine glands secrete through ducts onto a surface or into a lumen, while endocrine glands are ductless and release hormones into the bloodstream. Goblet cells are unicellular exocrine glands that secrete mucus.</p>
-    <p>Exocrine glands may release products by different mechanisms. <strong>Merocrine secretion</strong> occurs by exocytosis, <strong>apocrine secretion</strong> releases part of the apical cytoplasm with the product, and <strong>holocrine secretion</strong> occurs when the entire cell breaks down to become part of the secretion.</p>
-    <div class="reading-keybox"><strong>Key concept:</strong> Exocrine glands have ducts; endocrine glands do not have ducts and release hormones into blood.</div>
-  </article>
-
-  <article class="reading-card">
-    <h3>8. Summary for Practical Histology</h3>
-    <p>When examining epithelial tissue under the microscope, first identify the <strong>free surface</strong> or lumen. Then determine whether the epithelium is simple, stratified, pseudostratified, or transitional. Next, identify the shape of the surface cells and look for specializations such as cilia, microvilli, goblet cells, keratin, or umbrella cells.</p>
-    <div class="reading-warning"><strong>Common exam focus:</strong> Students are often tested on matching epithelial type with location and function, such as simple squamous epithelium in alveoli, stratified squamous epithelium in the esophagus, and transitional epithelium in the urinary bladder.</div>
-  </article>
 </div>
 
-<!-- ═══════════════════════════════════════
-     MCQ QUIZ
-════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TAB 4 — MCQ QUIZ
+     ─────────────────────────────────────────────────────────────
+     INSTRUCTIONS FOR CLAUDE:
+     • The quiz UI below is complete — do NOT change any HTML structure
+     • Only replace the JavaScript quizData array at the bottom of the file
+     • Provide exactly 12 SBA questions
+     • 4 options only per question (NBME style)
+     • Include clinical vignette scenarios
+     • "correct" value is the 0-based index of the correct option (0, 1, 2, or 3)
+     • "exp" is the explanation shown after answering
+════════════════════════════════════════════════════════════════ -->
 <div class="page" id="page-quiz">
   <div class="page-header">
     <span class="ph-icon">🧠</span>
@@ -918,33 +935,45 @@
   </div>
 
   <div class="score-card" id="scoreCard">
+    <svg class="score-ring" viewBox="0 0 150 150" aria-label="Quiz score ring">
+      <circle class="score-ring-bg" cx="75" cy="75" r="60"></circle>
+      <circle class="score-ring-bar" id="scoreRingBar" cx="75" cy="75" r="60"></circle>
+    </svg>
     <div class="score-emoji" id="scoreEmoji">🎉</div>
-    <div class="score-num" id="scoreNum">0/12</div>
-    <div class="score-sub" id="scoreSub">Great job!</div>
-    <button class="quiz-restart" onclick="restartQuiz()">🔄 Try Again</button>
+    <div class="score-num"  id="scoreNum">0/12</div>
+    <div class="score-sub"  id="scoreSub">Great job!</div>
+    <button class="quiz-restart" onclick="restartQuiz()">🔄 Retake Quiz</button>
   </div>
 </div>
 
-<!-- ── Bottom Tab Bar (4 tabs) ── -->
+
+<!-- ══════════════════════════════════════════════════════════════
+     BOTTOM TAB BAR — DO NOT MODIFY
+════════════════════════════════════════════════════════════════ -->
 <nav class="tab-bar">
-  <button class="tab-item active" data-tab="home" onclick="switchTab('home')">
+  <button class="tab-item active" data-tab="home"       onclick="switchTab('home')">
     <span class="tab-icon">📖</span>Lecture
   </button>
-  <button class="tab-item" data-tab="flashcards" onclick="switchTab('flashcards')">
+  <button class="tab-item"        data-tab="flashcards" onclick="switchTab('flashcards')">
     <span class="tab-icon">🃏</span>Cards
   </button>
-  <button class="tab-item" data-tab="reading" onclick="switchTab('reading')">
+  <button class="tab-item"        data-tab="reading"    onclick="switchTab('reading')">
     <span class="tab-icon">📚</span>Reading
   </button>
-  <button class="tab-item" data-tab="quiz" onclick="switchTab('quiz')">
+  <button class="tab-item"        data-tab="quiz"       onclick="switchTab('quiz')">
     <span class="tab-icon">🧠</span>Quiz
   </button>
 </nav>
 
 <button class="backtop" id="backtop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
+
+<!-- ══════════════════════════════════════════════════════════════
+     JAVASCRIPT — ALL LOGIC IS LOCKED. ONLY REPLACE DATA ARRAYS.
+════════════════════════════════════════════════════════════════ -->
 <script>
-/* ── Tab Switching ── */
+
+/* ── Tab Switching — DO NOT MODIFY ── */
 function switchTab(tab) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
@@ -953,25 +982,25 @@ function switchTab(tab) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ── Dark Mode ── */
+/* ── Dark Mode — DO NOT MODIFY ── */
 const darkBtn = document.getElementById('darkModeToggle');
 darkBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
   darkBtn.textContent = document.body.classList.contains('dark') ? '☀️ Light' : '🌙 Dark';
 });
 
-/* ── Back to Top ── */
+/* ── Back to Top — DO NOT MODIFY ── */
 const backtop = document.getElementById('backtop');
 window.addEventListener('scroll', () => {
   backtop.classList.toggle('visible', window.scrollY > 280);
 });
 
-/* ── Progress Bar (lecture sections) ── */
+/* ── Progress Bar (tracks open accordion sections) — DO NOT MODIFY ── */
 const allDetails = document.querySelectorAll('#page-home details');
 const progressBar = document.getElementById('progressBar');
 function updateProgress() {
   const opened = Array.from(allDetails).filter(d => d.open).length;
-  progressBar.style.width = (opened / allDetails.length * 100) + '%';
+  progressBar.style.width = (allDetails.length > 0 ? (opened / allDetails.length * 100) : 0) + '%';
 }
 allDetails.forEach(d => {
   d.addEventListener('toggle', updateProgress);
@@ -992,92 +1021,109 @@ allDetails.forEach(d => {
 updateProgress();
 
 
-/* ── Flashcard Data ── */
+/* ══════════════════════════════════════════════════════════════
+   FLASHCARD DATA — REPLACE THIS ARRAY WITH YOUR TOPIC CONTENT
+   ─────────────────────────────────────────────────────────────
+   Format:
+   { "term": "Term shown on front", "def": "Definition / key point shown on back" }
+
+   Rules:
+   • 18–22 cards
+   • Mix: anatomy terms, clinical scenarios, classification rules
+   • Keep def under 60 words for readability on mobile
+════════════════════════════════════════════════════════════════ */
 const flashcards = [
   {
-    "term": "Simple squamous epithelium",
-    "def": "Clinical style review: very thin lining for rapid diffusion; classically found in alveoli, endothelium, and mesothelium."
+    "term": "Tissue",
+    "def": "A group of similar cells and extracellular material organized to perform a common function."
   },
   {
-    "term": "Simple cuboidal epithelium",
-    "def": "Clinical style review: usually linked to secretion and absorption; common in kidney tubules and thyroid follicles."
+    "term": "Tissue level",
+    "def": "The level of organization between cells and organs; tissues combine to form organs."
   },
   {
-    "term": "Simple columnar epithelium",
-    "def": "Clinical style review: tall absorptive or secretory cells; important in stomach, intestine, and gallbladder."
+    "term": "Four basic tissues",
+    "def": "Epithelial, connective, muscle, and nervous tissue are the four major tissue families."
   },
   {
-    "term": "Pseudostratified respiratory epithelium",
-    "def": "Clinical style review: nuclei appear at different levels, but all cells touch the basement membrane; cilia and goblet cells support mucociliary clearance."
+    "term": "Epithelial polarity",
+    "def": "Epithelial cells have a free apical surface and a basal surface attached to the basement membrane."
   },
   {
-    "term": "Stratified squamous epithelium",
-    "def": "Clinical style review: protective epithelium against abrasion; keratinized in skin and non-keratinized in oral cavity and esophagus."
+    "term": "Avascular epithelium",
+    "def": "Epithelium lacks blood vessels and receives nutrients by diffusion from underlying connective tissue."
   },
   {
-    "term": "Transitional epithelium",
-    "def": "Clinical style review: urothelium with umbrella cells; allows urinary bladder distension while maintaining a urine barrier."
+    "term": "Simple epithelium",
+    "def": "One layer of cells; usually specialized for absorption, secretion, filtration, or diffusion."
   },
   {
-    "term": "Microvilli",
-    "def": "Clinical style review: increase absorptive surface area; form brush border in absorptive epithelium such as intestine and kidney tubules."
+    "term": "Stratified epithelium",
+    "def": "Multiple cell layers; mainly specialized for protection against mechanical stress."
   },
   {
-    "term": "Cilia",
-    "def": "Clinical style review: move mucus or fluid; defective ciliary activity may cause impaired mucociliary clearance and recurrent respiratory infection."
+    "term": "Squamous cells",
+    "def": "Flat epithelial cells; their thin shape supports diffusion or smooth lining."
   },
   {
-    "term": "Goblet cells",
-    "def": "Clinical style review: unicellular mucus-secreting exocrine glands; common in respiratory and intestinal epithelium."
+    "term": "Cuboidal cells",
+    "def": "Cube-shaped epithelial cells commonly involved in secretion and absorption."
   },
   {
-    "term": "Basement membrane",
-    "def": "Clinical style review: supports epithelium and guides repair; epithelial healing is better when this layer remains intact."
-  },
-  {
-    "term": "Tight junctions",
-    "def": "Clinical style review: seal spaces between epithelial cells and regulate paracellular passage across epithelial barriers."
-  },
-  {
-    "term": "Desmosomes",
-    "def": "Clinical style review: strong cell-to-cell attachment; especially important in epithelia exposed to friction and mechanical stress."
-  },
-  {
-    "term": "Hemidesmosomes",
-    "def": "Clinical style review: anchor epithelial cells to the basement membrane; remember hemi = cell to basement membrane, not cell to cell."
-  },
-  {
-    "term": "Metaplasia",
-    "def": "Clinical style review: reversible replacement of one mature epithelial type by another, commonly due to chronic irritation such as smoking."
-  },
-  {
-    "term": "Carcinoma",
-    "def": "Clinical style review: malignant tumor arising from epithelial tissue; examples include squamous cell carcinoma and adenocarcinoma."
-  },
-  {
-    "term": "Endothelium",
-    "def": "Clinical style review: simple squamous lining of blood and lymph vessels; provides a smooth surface for transport and exchange."
-  },
-  {
-    "term": "Mesothelium",
-    "def": "Clinical style review: simple squamous lining of serous cavities such as pleura, pericardium, and peritoneum."
-  },
-  {
-    "term": "Exocrine gland",
-    "def": "Clinical style review: secretes through a duct onto an epithelial surface or into a lumen; examples include salivary and sweat glands."
+    "term": "Columnar cells",
+    "def": "Tall epithelial cells commonly involved in absorption, secretion, and protection."
   },
   {
     "term": "Endocrine gland",
-    "def": "Clinical style review: ductless gland releasing hormones into blood; examples include thyroid, pituitary, and adrenal glands."
+    "def": "A ductless gland that releases hormones into blood or interstitial fluid."
   },
   {
-    "term": "Classification rule",
-    "def": "Clinical style review: in stratified epithelium, always classify according to the shape of the surface cells."
+    "term": "Exocrine gland",
+    "def": "A gland with ducts that carry secretions to an epithelial surface or cavity."
+  },
+  {
+    "term": "Extracellular matrix",
+    "def": "The non-cellular component of connective tissue; it determines support, strength, flexibility, or fluidity."
+  },
+  {
+    "term": "Adipose tissue",
+    "def": "Loose connective tissue made mainly of lipid-storing adipocytes; it stores energy, cushions, and insulates."
+  },
+  {
+    "term": "Cartilage",
+    "def": "Specialized connective tissue with chondrocytes in lacunae and an avascular matrix."
+  },
+  {
+    "term": "Bone matrix",
+    "def": "Calcified extracellular matrix that makes bone rigid and suitable for support and protection."
+  },
+  {
+    "term": "Periosteum",
+    "def": "External covering of bone that supports blood supply, repair, and tendon or ligament attachment."
+  },
+  {
+    "term": "Endosteum",
+    "def": "Thin internal lining of bone cavities, marrow spaces, and osteonic canals."
+  },
+  {
+    "term": "Blood as connective tissue",
+    "def": "Blood has cells suspended in plasma, a fluid extracellular matrix; fibrinogen can form fibrin during clotting."
+  },
+  {
+    "term": "Skeletal muscle",
+    "def": "Striated voluntary muscle mainly attached to the skeleton and responsible for body movement."
+  },
+  {
+    "term": "Smooth muscle",
+    "def": "Non-striated involuntary muscle found in hollow organs and vessel walls."
+  },
+  {
+    "term": "Nervous tissue",
+    "def": "Excitable and conductive tissue found in brain, spinal cord, and nerves; it coordinates responses."
   }
-]
+];
 
 let fcIndex = 0;
-
 function updateFlashcard() {
   const card = flashcards[fcIndex];
   document.getElementById('fcTerm').textContent = card.term;
@@ -1086,146 +1132,161 @@ function updateFlashcard() {
   document.getElementById('fcProgFill').style.width = ((fcIndex + 1) / flashcards.length * 100) + '%';
   document.getElementById('fcCard').classList.remove('flipped');
 }
-function flipCard() { document.getElementById('fcCard').classList.toggle('flipped'); }
-function nextCard() { if (fcIndex < flashcards.length - 1) { fcIndex++; updateFlashcard(); } }
-function prevCard() { if (fcIndex > 0) { fcIndex--; updateFlashcard(); } }
+function flipCard()  { document.getElementById('fcCard').classList.toggle('flipped'); }
+function nextCard()  { if (fcIndex < flashcards.length - 1) { fcIndex++; updateFlashcard(); } }
+function prevCard()  { if (fcIndex > 0) { fcIndex--; updateFlashcard(); } }
 updateFlashcard();
 
-/* ── Reading Material: static educational content, no script required ── */
 
-/* ── MCQ Quiz Data ── */
+/* ══════════════════════════════════════════════════════════════
+   QUIZ DATA — REPLACE THIS ARRAY WITH YOUR TOPIC CONTENT
+   ─────────────────────────────────────────────────────────────
+   Format:
+   {
+     "q":       "Question stem (clinical vignette preferred)",
+     "opts":    ["Option A", "Option B", "Option C", "Option D"],
+     "correct": 0,   ← 0-based index of correct answer (0=A, 1=B, 2=C, 3=D)
+     "exp":     "Explanation shown after the student answers"
+   }
+
+   Rules:
+   • Exactly 12 questions
+   • 4 options only (NBME/SBA style)
+   • Include clinical vignette scenarios
+   • "correct" is the zero-based index: A=0, B=1, C=2, D=3
+════════════════════════════════════════════════════════════════ */
 const quizData = [
   {
-    "q": "A student examines a tissue section and sees one layer of very flat cells lining air spaces in the lung. Which epithelial type is most likely present?",
+    "q": "A first-year student examines a tissue lining a body surface. The cells are closely packed, rest on a basement membrane, and the tissue has no blood vessels. Which tissue type is most consistent with these features?",
     "opts": [
-      "Simple squamous epithelium",
-      "Simple cuboidal epithelium",
-      "Stratified squamous epithelium",
-      "Transitional epithelium"
+      "Epithelial tissue",
+      "Dense connective tissue",
+      "Skeletal muscle tissue",
+      "Nervous tissue"
     ],
     "correct": 0,
-    "exp": "Alveoli require a very thin lining for gas diffusion, so they are lined by simple squamous epithelium."
+    "exp": "Closely packed cells, basement membrane support, and avascularity are characteristic features of epithelial tissue."
   },
   {
-    "q": "Which feature best distinguishes epithelial tissue from most connective tissue?",
+    "q": "A biopsy from a protective body surface shows several layers of cells. Which feature best explains why this tissue is suitable for protection against abrasion?",
     "opts": [
-      "Abundant extracellular matrix",
-      "Closely packed cells with minimal extracellular matrix",
-      "Large blood vessels between cells",
-      "Randomly arranged collagen bundles"
+      "A single thin cell layer",
+      "Multiple epithelial cell layers",
+      "Fluid extracellular matrix",
+      "Calcified ground substance"
     ],
     "correct": 1,
-    "exp": "Epithelium has high cellularity and minimal extracellular matrix, whereas connective tissue usually has more extracellular matrix."
+    "exp": "Stratified epithelium has multiple layers and is specialized for protection in areas exposed to friction."
   },
   {
-    "q": "A histology slide shows an epithelial lining with all cells touching the basement membrane, but nuclei appear at different heights. Which term best describes this epithelium?",
+    "q": "A gland releases its product into the bloodstream without using a duct. Which type of gland is this?",
     "opts": [
-      "Simple cuboidal",
-      "Pseudostratified columnar",
-      "Stratified columnar",
-      "Transitional"
+      "Exocrine gland",
+      "Endocrine gland",
+      "Sebaceous gland",
+      "Duct gland"
     ],
     "correct": 1,
-    "exp": "Pseudostratified epithelium looks multilayered because nuclei are at different levels, but all cells contact the basement membrane."
+    "exp": "Endocrine glands are ductless and release hormones into blood or interstitial fluid."
   },
   {
-    "q": "Which epithelial specialization mainly increases the absorptive surface area of intestinal epithelial cells?",
+    "q": "A tissue contains cells separated by abundant extracellular matrix and functions mainly in support and binding. Which major tissue family is represented?",
     "opts": [
-      "Cilia",
-      "Microvilli",
-      "Desmosomes",
-      "Hemidesmosomes"
+      "Epithelial tissue",
+      "Connective tissue",
+      "Muscle tissue",
+      "Nervous tissue"
     ],
     "correct": 1,
-    "exp": "Microvilli increase apical surface area and form the brush border in absorptive epithelia such as the small intestine."
+    "exp": "Connective tissue is characterized by cells dispersed in extracellular matrix and performs support, binding, protection, storage, and transport."
   },
   {
-    "q": "Which epithelial type is most suitable for protection against abrasion in the esophagus?",
+    "q": "A student identifies large cells containing lipid droplets in a loose connective tissue sample. Which tissue is most likely being examined?",
     "opts": [
-      "Simple squamous epithelium",
-      "Simple columnar epithelium",
-      "Non-keratinized stratified squamous epithelium",
-      "Transitional epithelium"
+      "Reticular tissue",
+      "Adipose tissue",
+      "Hyaline cartilage",
+      "Dense regular connective tissue"
+    ],
+    "correct": 1,
+    "exp": "Adipose tissue is a loose connective tissue composed mainly of lipid-storing adipocytes."
+  },
+  {
+    "q": "A joint surface is covered by a smooth supportive tissue that has chondrocytes in lacunae and lacks blood vessels. Which tissue is most likely present?",
+    "opts": [
+      "Hyaline cartilage",
+      "Compact bone",
+      "Dense irregular connective tissue",
+      "Simple squamous epithelium"
+    ],
+    "correct": 0,
+    "exp": "Articular surfaces are covered by hyaline cartilage, which contains chondrocytes in an avascular matrix."
+  },
+  {
+    "q": "A patient has a fracture involving the shaft of a long bone. Which region of the bone is affected?",
+    "opts": [
+      "Epiphysis",
+      "Metaphysis",
+      "Diaphysis",
+      "Articular cartilage"
     ],
     "correct": 2,
-    "exp": "The esophagus is exposed to friction from swallowed food and is lined by non-keratinized stratified squamous epithelium."
+    "exp": "The diaphysis is the shaft of a long bone."
   },
   {
-    "q": "Which structure anchors epithelial cells to the underlying basement membrane?",
+    "q": "A painful fracture irritates the external covering of bone. Which structure is most likely responsible for much of this pain?",
     "opts": [
-      "Gap junction",
-      "Hemidesmosome",
-      "Cilium",
-      "Goblet cell"
+      "Endosteum",
+      "Periosteum",
+      "Articular cartilage",
+      "Medullary cavity"
     ],
     "correct": 1,
-    "exp": "Hemidesmosomes attach the basal surface of epithelial cells to the basement membrane."
+    "exp": "The periosteum is the external covering of bone and is pain-sensitive."
   },
   {
-    "q": "A section from the urinary bladder shows dome-shaped surface cells that flatten when the organ is distended. Which epithelium is present?",
+    "q": "A laboratory sample contains erythrocytes, leukocytes, platelets, and plasma. Which tissue classification is most appropriate?",
     "opts": [
-      "Simple cuboidal epithelium",
-      "Ciliated simple columnar epithelium",
-      "Transitional epithelium",
-      "Keratinized stratified squamous epithelium"
-    ],
-    "correct": 2,
-    "exp": "Transitional epithelium, or urothelium, is specialized for stretching in the urinary tract."
-  },
-  {
-    "q": "Which statement best describes endocrine glands?",
-    "opts": [
-      "They secrete products through ducts onto epithelial surfaces",
-      "They release hormones into the bloodstream and lack ducts",
-      "They are always unicellular glands",
-      "They only secrete mucus"
+      "Epithelial tissue",
+      "Specialized connective tissue",
+      "Smooth muscle tissue",
+      "Nervous tissue"
     ],
     "correct": 1,
-    "exp": "Endocrine glands are ductless and release hormones into blood."
+    "exp": "Blood is a specialized connective tissue with cells suspended in the fluid matrix plasma."
   },
   {
-    "q": "Which epithelial junction forms a seal that limits passage of material between adjacent epithelial cells?",
+    "q": "A histology image shows striated fibers under voluntary control. Which type of muscle tissue is most likely shown?",
     "opts": [
-      "Tight junction",
-      "Gap junction",
-      "Desmosome",
-      "Hemidesmosome"
-    ],
-    "correct": 0,
-    "exp": "Tight junctions form an apical seal and regulate paracellular movement."
-  },
-  {
-    "q": "A chronic smoker develops replacement of ciliated respiratory epithelium by stratified squamous epithelium. Which process explains this change?",
-    "opts": [
-      "Hypertrophy",
-      "Metaplasia",
-      "Necrosis",
-      "Calcification"
+      "Smooth muscle",
+      "Skeletal muscle",
+      "Cardiac muscle",
+      "Elastic connective tissue"
     ],
     "correct": 1,
-    "exp": "Metaplasia is reversible replacement of one mature epithelial type by another in response to chronic irritation."
+    "exp": "Skeletal muscle is striated and voluntary."
   },
   {
-    "q": "Which epithelial type is commonly found in thyroid follicles?",
+    "q": "A tissue in the wall of a hollow organ contracts without conscious control and has no striations. Which tissue type best matches this description?",
     "opts": [
-      "Simple cuboidal epithelium",
-      "Simple squamous epithelium",
-      "Keratinized stratified squamous epithelium",
-      "Pseudostratified epithelium"
-    ],
-    "correct": 0,
-    "exp": "Thyroid follicles are typically lined by simple cuboidal epithelium involved in secretion and absorption."
-  },
-  {
-    "q": "Which rule is correct when classifying stratified epithelium?",
-    "opts": [
-      "Use the shape of the deepest cells",
-      "Use the shape of the surface cells",
-      "Use the thickness of the basement membrane",
-      "Use the number of blood vessels"
+      "Skeletal muscle",
+      "Smooth muscle",
+      "Cardiac muscle",
+      "Dense regular connective tissue"
     ],
     "correct": 1,
-    "exp": "Stratified epithelium is named according to the shape of the cells at the free surface."
+    "exp": "Smooth muscle is non-striated and involuntary and is found in the walls of hollow organs and blood vessels."
+  },
+  {
+    "q": "A patient develops loss of sensation after injury to a peripheral nerve. Which tissue property is most directly affected?",
+    "opts": [
+      "Secretion",
+      "Conductivity",
+      "Calcification",
+      "Lipid storage"
+    ],
+    "correct": 1,
+    "exp": "Nervous tissue is specialized for irritability and conductivity, allowing transmission of sensory and motor signals."
   }
 ];
 
@@ -1250,7 +1311,7 @@ function selectAnswer(i) {
   const q = quizData[qIndex];
   document.querySelectorAll('.quiz-opt').forEach((b, idx) => {
     b.disabled = true;
-    if (idx === q.correct) b.classList.add('correct');
+    if (idx === q.correct)                b.classList.add('correct');
     else if (idx === i && i !== q.correct) b.classList.add('wrong');
   });
   if (i === q.correct) score++;
@@ -1275,14 +1336,16 @@ function showScore() {
   const pct = score / quizData.length;
   document.getElementById('scoreNum').textContent = `${score}/${quizData.length}`;
   document.getElementById('scoreEmoji').textContent = pct === 1 ? '🏆' : pct >= .7 ? '🎉' : pct >= .5 ? '📚' : '💪';
-  document.getElementById('scoreSub').textContent = pct === 1 ? 'Perfect score! Outstanding!' : pct >= .7 ? 'Great job! Keep it up!' : pct >= .5 ? 'Good effort — review the lecture notes.' : 'Keep studying — you\'ve got this!';
+  document.getElementById('scoreSub').textContent   = pct === 1 ? 'Perfect score! Outstanding!' : pct >= .7 ? 'Great job! Keep it up!' : pct >= .5 ? 'Good effort — review the lecture notes.' : 'Keep studying — you\'ve got this!';
+  const ring = document.getElementById('scoreRingBar');
+  if (ring) ring.style.strokeDashoffset = 377 - (377 * pct);
 }
 
 function restartQuiz() {
   qIndex = 0; score = 0; answered = false;
   document.getElementById('quizScoreBadge').textContent = 'Score: 0';
   document.getElementById('scoreCard').style.display = 'none';
-  document.getElementById('quizArea').style.display = 'block';
+  document.getElementById('quizArea').style.display  = 'block';
   renderQuestion();
 }
 
